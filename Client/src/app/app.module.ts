@@ -13,13 +13,15 @@ import { ManagerGiftComponent } from './Admin/manager-gift/manager-gift.componen
 import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.component';
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
 import { HearderAdminComponent } from './layout/hearder-admin/hearder-admin.component';
-import { FooterAdminComponent } from './layout/footer-admin/footer-admin.component';
 import { HearderUserComponent } from './layout/hearder-user/hearder-user.component';
 import { FooterUserComponent } from './layout/footer-user/footer-user.component';
 import { IndexComponent } from './User/index/index.component';
 import { HomeComponent } from './User/home/home.component';
 import { IntroComponent } from './User/intro/intro.component';
 import { ProductComponent } from './User/product/product.component';
+import { MenuAdminComponent } from './layout/menu-admin/menu-admin.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { UserLayoutComponent } from './layout/user-layout/user-layout.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,15 @@ import { ProductComponent } from './User/product/product.component';
     ManagerBrandComponent,
     ManagerRevenueComponent,
     HearderAdminComponent,
-    FooterAdminComponent,
     HearderUserComponent,
     FooterUserComponent,
     IndexComponent,
     HomeComponent,
     IntroComponent,
-    ProductComponent
+    ProductComponent,
+    MenuAdminComponent,
+    AdminLayoutComponent,
+    UserLayoutComponent
   ],
   imports: [
     BrowserModule,

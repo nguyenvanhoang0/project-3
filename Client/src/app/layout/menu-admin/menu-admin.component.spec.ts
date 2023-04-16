@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HearderAdminComponent } from './hearder-admin.component';
+import { MenuAdminComponent } from './menu-admin.component';
 
-describe('HearderAdminComponent', () => {
-  let component: HearderAdminComponent;
-  let fixture: ComponentFixture<HearderAdminComponent>;
+describe('MenuAdminComponent', () => {
+  let component: MenuAdminComponent;
+  let fixture: ComponentFixture<MenuAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HearderAdminComponent ]
+      declarations: [ MenuAdminComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HearderAdminComponent);
+    fixture = TestBed.createComponent(MenuAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,5 +21,3 @@ describe('HearderAdminComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-

@@ -1,0 +1,48 @@
+.menu{
+    background-color: #71b85e;
+    width: 250px;
+    height: 1000px ;
+  }
+  
+  .menu ul li {
+    padding: 20px;
+  }
+
+  ul li{
+    list-style-type: none;
+    height: 50%px;
+  }
+  
+  
+  .center > li {
+    margin-right: 25px;
+  }
+
+  .item{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .item:hover{
+    background-color: #63a851;
+  
+  }
+  
+  .item:hover .none{
+    display: block;
+  }
+  
+  .none{
+    display: none;
+    position: absolute;
+    left: 250px;
+  }
+  
+  .none li{
+    background-color: #71b85e;
+  }
+  
+  .none li:hover{
+    background-color: #63a851;
+  
+  }

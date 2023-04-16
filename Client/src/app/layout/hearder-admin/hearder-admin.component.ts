@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./hearder-admin.component.css']
 })
 export class HearderAdminComponent {
+  changeClass() {
+    const element = document.querySelector('.search');
+    if (element) {
+      element.classList.replace('search', 'searchs');
+    }
+  }
 
 }
+
