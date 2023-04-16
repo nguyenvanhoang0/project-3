@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
-      { path: 'addproduct', component: AddProductComponent },
+      { path: 'Addproduct', component: AddProductComponent },
       { path: 'AddGem', component: AddGemComponent },
       { path: 'AddGift', component: AddGiftComponent },
       { path: 'ManagerGem', component: ManagerGemComponent },

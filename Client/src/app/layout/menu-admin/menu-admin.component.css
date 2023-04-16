@@ -1,21 +1,21 @@
 .menu{
     background-color: #71b85e;
-    width: 250px;
+    width: 200px;
     height: 1000px ;
   }
   
-  .menu ul li {
-    padding: 20px;
+  .menu  ul  li {
+    padding: 10px 20px;
+    /* width: 100%; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center	; */
   }
 
   ul li{
     list-style-type: none;
     height: 50%px;
-  }
-  
-  
-  .center > li {
-    margin-right: 25px;
+    cursor: pointer;
   }
 
   .item{
@@ -35,7 +35,7 @@
   .none{
     display: none;
     position: absolute;
-    left: 250px;
+    left: 200px;
   }
   
   .none li{
