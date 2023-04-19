@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+ 
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
@@ -13,6 +21,7 @@ import { ManagerGiftComponent } from './Admin/manager-gift/manager-gift.componen
 import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.component';
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
 import { HearderAdminComponent } from './layout/hearder-admin/hearder-admin.component';
+
 import { HearderUserComponent } from './layout/hearder-user/hearder-user.component';
 import { FooterUserComponent } from './layout/footer-user/footer-user.component';
 import { IndexComponent } from './User/index/index.component';
@@ -48,9 +57,23 @@ import { UserLayoutComponent } from './layout/user-layout/user-layout.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    // CKEditorModule,
   ],
+
+
+
   providers: [],
   bootstrap: [AppComponent]
 })
+
+// @NgModule({
+//   imports: [
+//     CKEditorModule,
+//     FormsModule,
+//     ReactiveFormsModule
+//   ]
+// })
+
 export class AppModule { }
