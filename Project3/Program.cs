@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
-                options.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
