@@ -6,18 +6,18 @@
                 <p>General information</p>
             </div>
             <div>
-                <label for="">Name product</label><br>
-                <input type="text" >
+                <label for="">Tile news</label><br>
+                <input type="text">
             </div>
             <div class="flex extra">
                 <div>
-                    <label for="">Price</label><br>
-                    <input type="text" >
-                </div>
-                <div class="">
-                    <label for="">Quantity</label><br>
+                    <label for="">author</label><br>
                     <input type="text">
                 </div>
+                <!-- <div class="">
+                    <label for="">Quantity</label><br>
+                    <input type="text">
+                </div> -->
                 
             </div>
             <!-- <ckeditor [editor]="Editor" [(ngModel)]="content"></ckeditor> -->
@@ -33,32 +33,10 @@
                 </div>
 
             </div> -->
-            <div *ngIf="files" class=" ">
-                <div>Image</div>
-                <div class="flex show_list">
-                    <div *ngFor="let file of files" class="item_img">
-                        <div class="show_img">
-                            <div class=""><img [src]="file.src" [alt]="file.name"></div>
-                            <span>
-                                <p>{{ file.name }}</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="bt_add">Add Product</button>
+            <button class="bt_add">Add News</button>
         </div>
-        <div class=" left ">
-            <div class="information formadd">
-                <div class="flex extra">
-                    <p>Image</p><img src="/Client/src/assets/img/addfile.svg" alt="">
-                </div>
-                <div class="">
-                    <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
-                        <input type="file" (change)="onFileSelecteds($event, index)" *ngIf="index === 0 || files[index - 1] " class="add_img">
-                      </div>
-                </div>
-            </div>
+        <!-- <div class=" left ">
+            
             <div class="information formadd">
                 <div class="flex extra">
                     <p>Brand</p><img src="/Client/src/assets/img/addfile.svg" alt="">
@@ -85,7 +63,6 @@
                 </div>
                 
             </div>
-        </div>
-        
+        </div> -->
     </form>
 </div>

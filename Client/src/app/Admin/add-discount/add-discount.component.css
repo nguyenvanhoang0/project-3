@@ -5,6 +5,7 @@
 
 .form {
     justify-content: space-between;
+    padding:0 150px;
 }
 
 .information {
@@ -16,7 +17,7 @@
 }
 
 .right {
-    width: 65%;
+    width: 100%;
 }
 
 .formadd>div {
@@ -27,7 +28,7 @@
     margin-top: 0px;
 }
 
-.left {
+/* .left {
     width: 27%;
 }
 
@@ -37,7 +38,7 @@
 
 .left .information:first-child{
     margin-top: 0px;
-}
+} */
 
 input , select{
     border: 1px gray solid;
@@ -61,7 +62,7 @@ input , select{
 .extra input {
     width: 100%;
 }
-
+/*
 .show_list{
     flex-wrap: wrap;
     flex-direction: row;
@@ -100,5 +101,5 @@ span p{
 
 .add_img:first-child{
     margin-top: 0px;
-}
+} */
 

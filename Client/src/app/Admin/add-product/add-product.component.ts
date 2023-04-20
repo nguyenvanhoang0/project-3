@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, ElementRef, QueryList } from '@angular/core';
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import tinymce from 'tinymce';
 // import * as Quill from 'quill';
@@ -17,7 +17,7 @@ export class AddProductComponent {
 
 
   // selectedFile: File | null = null;
-  // fileName: string | ArrayBuffer | null = null;
+  // fileName: string | ArrayBuffer | null = null
   // imageSrc: string | ArrayBuffer | null = null;
 
   // onFileSelected(event : any) {
@@ -45,6 +45,8 @@ export class AddProductComponent {
       reader.readAsDataURL(file);
     }
   }
+
+  
 
   // public Editor = ClassicEditor;
   // public content: string = '<p>Initial content</p>';

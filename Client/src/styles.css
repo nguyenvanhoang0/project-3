@@ -9,3 +9,16 @@
     font-family: 'NTR';
     src: url('/Client/src/assets/Font/font_ntr ') format('truetype');
 }
+
+.bt_add{
+    margin-top: 25px;
+    border: none;
+    background-color: #71b85e;
+    padding:10px 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.flex{
+    display: flex;
+}

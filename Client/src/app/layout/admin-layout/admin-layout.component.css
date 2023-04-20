@@ -1,15 +1,32 @@
-
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
 
-.flex{
-    display: flex;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
-.main{
-    padding: 40px 40px;
-    width: 100%;
-    background-color: #ddd;
+.menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.main {
+  height: 100%;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding: 40px 40px;
+  width: 100%;
+  background-color: #ddd;
 }

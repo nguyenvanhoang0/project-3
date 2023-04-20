@@ -7,11 +7,17 @@ import { UserLayoutComponent } from './layout/user-layout/user-layout.component'
 import { AddProductComponent } from './Admin/add-product/add-product.component';
 import { AddGemComponent } from './Admin/add-gem/add-gem.component';
 import { AddGiftComponent } from './Admin/add-gift/add-gift.component';
+import { AddBrandComponent } from './Admin/add-brand/add-brand.component';
+import { AddDiscountComponent } from './Admin/add-discount/add-discount.component';
+import { AddNewsComponent } from './Admin/add-news/add-news.component';
 import { ManagerGemComponent } from './Admin/manager-gem/manager-gem.component';
 import { ManagerProductComponent } from './Admin/manager-product/manager-product.component';
 import { ManagerGiftComponent } from './Admin/manager-gift/manager-gift.component';
 import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.component';
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
+import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
+import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
+
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 import { IndexComponent } from './User/index/index.component';
@@ -28,11 +34,17 @@ const routes: Routes = [
       { path: 'Addproduct', component: AddProductComponent },
       { path: 'AddGem', component: AddGemComponent },
       { path: 'AddGift', component: AddGiftComponent },
+      { path: 'AddBrand', component: AddBrandComponent },
+      { path: 'AddDiscount', component: AddDiscountComponent },
+      { path: 'AddNews', component: AddNewsComponent },
+      
       { path: 'ManagerGem', component: ManagerGemComponent },
       { path: 'ManagerProduct', component: ManagerProductComponent },
       { path: 'ManagerGift', component: ManagerGiftComponent },
       { path: 'ManagerBrand', component: ManagerBrandComponent },
       { path: 'ManagerRevenue', component: ManagerRevenueComponent },
+      { path: 'ManagerNews', component: ManagerNewsComponent },
+      { path: 'ManagerDiscount', component: ManagerDiscountComponent },
       
       { path: 'Dashboard', component: DashboardComponent }
     ]

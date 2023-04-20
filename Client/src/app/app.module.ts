@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
  
@@ -31,6 +31,11 @@ import { ProductComponent } from './User/product/product.component';
 import { MenuAdminComponent } from './layout/menu-admin/menu-admin.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { UserLayoutComponent } from './layout/user-layout/user-layout.component';
+import { AddBrandComponent } from './Admin/add-brand/add-brand.component';
+import { AddDiscountComponent } from './Admin/add-discount/add-discount.component';
+import { AddNewsComponent } from './Admin/add-news/add-news.component';
+import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
+import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +58,12 @@ import { UserLayoutComponent } from './layout/user-layout/user-layout.component'
     ProductComponent,
     MenuAdminComponent,
     AdminLayoutComponent,
-    UserLayoutComponent
+    UserLayoutComponent,
+    AddBrandComponent,
+    AddDiscountComponent,
+    AddNewsComponent,
+    ManagerNewsComponent,
+    ManagerDiscountComponent
   ],
   imports: [
     BrowserModule,
