@@ -18,6 +18,8 @@ import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
 
+import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
+
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 import { IndexComponent } from './User/index/index.component';
@@ -31,7 +33,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
-      { path: 'Addproduct', component: AddProductComponent },
+      { path: 'AddProduct', component: AddProductComponent },
       { path: 'AddGem', component: AddGemComponent },
       { path: 'AddGift', component: AddGiftComponent },
       { path: 'AddBrand', component: AddBrandComponent },
@@ -45,6 +47,9 @@ const routes: Routes = [
       { path: 'ManagerRevenue', component: ManagerRevenueComponent },
       { path: 'ManagerNews', component: ManagerNewsComponent },
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
+      
+      { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
+      
       
       { path: 'Dashboard', component: DashboardComponent }
     ]

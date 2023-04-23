@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
- 
+import { HttpClientModule } from '@angular/common/http'; 
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -36,6 +36,7 @@ import { AddDiscountComponent } from './Admin/add-discount/add-discount.componen
 import { AddNewsComponent } from './Admin/add-news/add-news.component';
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
+import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -63,12 +64,14 @@ import { ManagerDiscountComponent } from './Admin/manager-discount/manager-disco
     AddDiscountComponent,
     AddNewsComponent,
     ManagerNewsComponent,
-    ManagerDiscountComponent
+    ManagerDiscountComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
     // CKEditorModule,
   ],
 
