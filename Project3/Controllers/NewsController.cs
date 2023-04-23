@@ -5,63 +5,61 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project3.Interface;
 using Project3.Models;
 
 namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class NewsController : ControllerBase
     {
         private readonly DatabaseContext _context;
-        private readonly IAccountRepository _accountRepository;
 
-        public AccountsController(DatabaseContext context)
+        public NewsController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/Accounts
+        // GET: api/News
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<News>>> GetNews()
         {
-          if (_context.Account == null)
+          if (_context.News == null)
           {
               return NotFound();
           }
-            return await _context.Account.ToListAsync();
+            return await _context.News.ToListAsync();
         }
 
-        // GET: api/Accounts/5
+        // GET: api/News/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<News>> GetNews(int id)
         {
-          if (_context.Account == null)
+          if (_context.News == null)
           {
               return NotFound();
           }
-            var account = await _context.Account.FindAsync(id);
+            var news = await _context.News.FindAsync(id);
 
-            if (account == null)
+            if (news == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return news;
         }
 
-        // PUT: api/Accounts/5
+        // PUT: api/News/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutNews(int id, News news)
         {
-            if (id != account.AccountId)
+            if (id != news.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(news).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +67,7 @@ namespace Project3.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!NewsExists(id))
                 {
                     return NotFound();
                 }
@@ -82,44 +80,44 @@ namespace Project3.Controllers
             return NoContent();
         }
 
-        // POST: api/Accounts
+        // POST: api/News
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> CreateAccount(Account account)
+        public async Task<ActionResult<News>> PostNews(News news)
         {
-          if (_context.Account == null)
+          if (_context.News == null)
           {
-              return Problem("Entity set 'DatabaseContext.Account'  is null.");
+              return Problem("Entity set 'DatabaseContext.News'  is null.");
           }
-            _context.Account.Add(account);
+            _context.News.Add(news);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetNews", new { id = news.Id }, news);
         }
 
-        // DELETE: api/Accounts/5
+        // DELETE: api/News/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteNews(int id)
         {
-            if (_context.Account == null)
+            if (_context.News == null)
             {
                 return NotFound();
             }
-            var account = await _context.Account.FindAsync(id);
-            if (account == null)
+            var news = await _context.News.FindAsync(id);
+            if (news == null)
             {
                 return NotFound();
             }
 
-            _context.Account.Remove(account);
+            _context.News.Remove(news);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool NewsExists(int id)
         {
-            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return (_context.News?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

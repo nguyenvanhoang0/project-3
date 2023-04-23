@@ -30,6 +30,14 @@ namespace Project3.Models
 
         public DbSet<Project3.Models.Brand> Brand { get; set; } = default!;
 
+        public DbSet<Project3.Models.Material> Material { get; set; } = default!;
+
+        public DbSet<Project3.Models.News> News { get; set; } = default!;
+
+        public DbSet<Project3.Models.Promotion> Promotion { get; set; } = default!;
+
+        public DbSet<Project3.Models.OrderDetail> OrderDetail { get; set; } = default!;
+
 
 
     }

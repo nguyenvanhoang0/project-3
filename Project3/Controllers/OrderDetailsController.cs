@@ -5,63 +5,61 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project3.Interface;
 using Project3.Models;
 
 namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class OrderDetailsController : ControllerBase
     {
         private readonly DatabaseContext _context;
-        private readonly IAccountRepository _accountRepository;
 
-        public AccountsController(DatabaseContext context)
+        public OrderDetailsController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/Accounts
+        // GET: api/OrderDetails
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetail()
         {
-          if (_context.Account == null)
+          if (_context.OrderDetail == null)
           {
               return NotFound();
           }
-            return await _context.Account.ToListAsync();
+            return await _context.OrderDetail.ToListAsync();
         }
 
-        // GET: api/Accounts/5
+        // GET: api/OrderDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<OrderDetail>> GetOrderDetail(int id)
         {
-          if (_context.Account == null)
+          if (_context.OrderDetail == null)
           {
               return NotFound();
           }
-            var account = await _context.Account.FindAsync(id);
+            var orderDetail = await _context.OrderDetail.FindAsync(id);
 
-            if (account == null)
+            if (orderDetail == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return orderDetail;
         }
 
-        // PUT: api/Accounts/5
+        // PUT: api/OrderDetails/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutOrderDetail(int id, OrderDetail orderDetail)
         {
-            if (id != account.AccountId)
+            if (id != orderDetail.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(orderDetail).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +67,7 @@ namespace Project3.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!OrderDetailExists(id))
                 {
                     return NotFound();
                 }
@@ -82,44 +80,44 @@ namespace Project3.Controllers
             return NoContent();
         }
 
-        // POST: api/Accounts
+        // POST: api/OrderDetails
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> CreateAccount(Account account)
+        public async Task<ActionResult<OrderDetail>> PostOrderDetail(OrderDetail orderDetail)
         {
-          if (_context.Account == null)
+          if (_context.OrderDetail == null)
           {
-              return Problem("Entity set 'DatabaseContext.Account'  is null.");
+              return Problem("Entity set 'DatabaseContext.OrderDetail'  is null.");
           }
-            _context.Account.Add(account);
+            _context.OrderDetail.Add(orderDetail);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetOrderDetail", new { id = orderDetail.Id }, orderDetail);
         }
 
-        // DELETE: api/Accounts/5
+        // DELETE: api/OrderDetails/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteOrderDetail(int id)
         {
-            if (_context.Account == null)
+            if (_context.OrderDetail == null)
             {
                 return NotFound();
             }
-            var account = await _context.Account.FindAsync(id);
-            if (account == null)
+            var orderDetail = await _context.OrderDetail.FindAsync(id);
+            if (orderDetail == null)
             {
                 return NotFound();
             }
 
-            _context.Account.Remove(account);
+            _context.OrderDetail.Remove(orderDetail);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool OrderDetailExists(int id)
         {
-            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return (_context.OrderDetail?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

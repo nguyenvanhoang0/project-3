@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KHzhSkCc4uh5Z4NegOIPwCN8aT02cjDmNBSt+fbg1Gcbv7r2IpTI6NPcJObNkHqvvlrDU14MhVE37FpSs+D49g==",
+  "dgSpecHash": "i2DV+ClVkU1WyXbxsaQnh9tVZv2WR3eRL9hMoOzJ0cw84CPVhDHJVDoYwrYWND4EfEwJej5wCMyQ+DnbpBmS1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\project\\Jewelry\\Project3\\Project3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

@@ -5,63 +5,61 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project3.Interface;
 using Project3.Models;
 
 namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class PromotionsController : ControllerBase
     {
         private readonly DatabaseContext _context;
-        private readonly IAccountRepository _accountRepository;
 
-        public AccountsController(DatabaseContext context)
+        public PromotionsController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/Accounts
+        // GET: api/Promotions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotion()
         {
-          if (_context.Account == null)
+          if (_context.Promotion == null)
           {
               return NotFound();
           }
-            return await _context.Account.ToListAsync();
+            return await _context.Promotion.ToListAsync();
         }
 
-        // GET: api/Accounts/5
+        // GET: api/Promotions/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Promotion>> GetPromotion(int id)
         {
-          if (_context.Account == null)
+          if (_context.Promotion == null)
           {
               return NotFound();
           }
-            var account = await _context.Account.FindAsync(id);
+            var promotion = await _context.Promotion.FindAsync(id);
 
-            if (account == null)
+            if (promotion == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return promotion;
         }
 
-        // PUT: api/Accounts/5
+        // PUT: api/Promotions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutPromotion(int id, Promotion promotion)
         {
-            if (id != account.AccountId)
+            if (id != promotion.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(promotion).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +67,7 @@ namespace Project3.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!PromotionExists(id))
                 {
                     return NotFound();
                 }
@@ -82,44 +80,44 @@ namespace Project3.Controllers
             return NoContent();
         }
 
-        // POST: api/Accounts
+        // POST: api/Promotions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> CreateAccount(Account account)
+        public async Task<ActionResult<Promotion>> PostPromotion(Promotion promotion)
         {
-          if (_context.Account == null)
+          if (_context.Promotion == null)
           {
-              return Problem("Entity set 'DatabaseContext.Account'  is null.");
+              return Problem("Entity set 'DatabaseContext.Promotion'  is null.");
           }
-            _context.Account.Add(account);
+            _context.Promotion.Add(promotion);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetPromotion", new { id = promotion.Id }, promotion);
         }
 
-        // DELETE: api/Accounts/5
+        // DELETE: api/Promotions/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeletePromotion(int id)
         {
-            if (_context.Account == null)
+            if (_context.Promotion == null)
             {
                 return NotFound();
             }
-            var account = await _context.Account.FindAsync(id);
-            if (account == null)
+            var promotion = await _context.Promotion.FindAsync(id);
+            if (promotion == null)
             {
                 return NotFound();
             }
 
-            _context.Account.Remove(account);
+            _context.Promotion.Remove(promotion);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool PromotionExists(int id)
         {
-            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return (_context.Promotion?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

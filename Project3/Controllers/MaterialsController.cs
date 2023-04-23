@@ -5,63 +5,61 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Project3.Interface;
 using Project3.Models;
 
 namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class MaterialsController : ControllerBase
     {
         private readonly DatabaseContext _context;
-        private readonly IAccountRepository _accountRepository;
 
-        public AccountsController(DatabaseContext context)
+        public MaterialsController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/Accounts
+        // GET: api/Materials
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<Material>>> GetMaterial()
         {
-          if (_context.Account == null)
+          if (_context.Material == null)
           {
               return NotFound();
           }
-            return await _context.Account.ToListAsync();
+            return await _context.Material.ToListAsync();
         }
 
-        // GET: api/Accounts/5
+        // GET: api/Materials/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Material>> GetMaterial(int id)
         {
-          if (_context.Account == null)
+          if (_context.Material == null)
           {
               return NotFound();
           }
-            var account = await _context.Account.FindAsync(id);
+            var material = await _context.Material.FindAsync(id);
 
-            if (account == null)
+            if (material == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return material;
         }
 
-        // PUT: api/Accounts/5
+        // PUT: api/Materials/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutMaterial(int id, Material material)
         {
-            if (id != account.AccountId)
+            if (id != material.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(material).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +67,7 @@ namespace Project3.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!MaterialExists(id))
                 {
                     return NotFound();
                 }
@@ -82,44 +80,44 @@ namespace Project3.Controllers
             return NoContent();
         }
 
-        // POST: api/Accounts
+        // POST: api/Materials
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> CreateAccount(Account account)
+        public async Task<ActionResult<Material>> PostMaterial(Material material)
         {
-          if (_context.Account == null)
+          if (_context.Material == null)
           {
-              return Problem("Entity set 'DatabaseContext.Account'  is null.");
+              return Problem("Entity set 'DatabaseContext.Material'  is null.");
           }
-            _context.Account.Add(account);
+            _context.Material.Add(material);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetMaterial", new { id = material.Id }, material);
         }
 
-        // DELETE: api/Accounts/5
+        // DELETE: api/Materials/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteMaterial(int id)
         {
-            if (_context.Account == null)
+            if (_context.Material == null)
             {
                 return NotFound();
             }
-            var account = await _context.Account.FindAsync(id);
-            if (account == null)
+            var material = await _context.Material.FindAsync(id);
+            if (material == null)
             {
                 return NotFound();
             }
 
-            _context.Account.Remove(account);
+            _context.Material.Remove(material);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool MaterialExists(int id)
         {
-            return (_context.Account?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return (_context.Material?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
