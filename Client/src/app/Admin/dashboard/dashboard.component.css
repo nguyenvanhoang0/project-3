@@ -1,0 +1,51 @@
+.subject{
+    justify-content: space-evenly;
+}
+
+.Chart{
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.information {
+    width: 22%;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.information:first-child{
+    margin-left: 0px;
+}
+
+.tile{
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.orders{
+    background-color: rgba(113, 184, 94, 0.61);
+    border: 1px solid #71b85e;
+    color: darkgreen;
+}
+
+.Today{
+    font-size: 14px;
+} 
+
+
+.events{
+    background-color: rgba(113, 184, 94, 0.22);
+    border: 1px solid rgba(113, 184, 94, 0.62);
+    color: #2cac0a;
+}
+
+.no_product{
+    background-color: #d5926a96;
+    border: 1px solid #F86858;
+    color: red;
+}
