@@ -42,6 +42,8 @@ import { CartPageComponent } from './User/cart-page/cart-page.component';
 import { OderHistoryComponent } from './User/oder-history/oder-history.component';
 import { CustomOderPageComponent } from './User/custom-oder-page/custom-oder-page.component';
 import { ShowProductComponent } from './User/show-product/show-product.component';
+import { ShowBranchComponent } from './User/show-branch/show-branch.component';
+import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { ShowProductComponent } from './User/show-product/show-product.component
     CartPageComponent,
     OderHistoryComponent,
     CustomOderPageComponent,
-    ShowProductComponent
+    ShowProductComponent,
+    ShowBranchComponent,
+    ShowGemstoneComponent
   ],
   imports: [
     BrowserModule,
