@@ -37,6 +37,11 @@ import { AddNewsComponent } from './Admin/add-news/add-news.component';
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
 import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
+import { NewsComponent } from './User/news/news.component';
+import { CartPageComponent } from './User/cart-page/cart-page.component';
+import { OderHistoryComponent } from './User/oder-history/oder-history.component';
+import { CustomOderPageComponent } from './User/custom-oder-page/custom-oder-page.component';
+import { ShowProductComponent } from './User/show-product/show-product.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +70,12 @@ import { ProductDetailComponent } from './Admin/product-detail/product-detail.co
     AddNewsComponent,
     ManagerNewsComponent,
     ManagerDiscountComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    NewsComponent,
+    CartPageComponent,
+    OderHistoryComponent,
+    CustomOderPageComponent,
+    ShowProductComponent
   ],
   imports: [
     BrowserModule,

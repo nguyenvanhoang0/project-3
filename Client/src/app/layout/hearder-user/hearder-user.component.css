@@ -407,7 +407,8 @@
 .header-bottom__notify-item {
     height: 36px;
     font-size: 1.7rem;
-    font-weight: 10
+    font-weight: 10;
+    cursor: pointer;
 }
 
 .header-bottom__notify-item a {

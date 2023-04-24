@@ -208,16 +208,14 @@
 
 /* container bottom */
 .container-bottom {
-    background-image: url(../../../assets/img/png/news-1.png);
-    /* background-size: cover !important;
+    background-image: url(../../../assets/img/png/background-container-bottom.jpg);
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: 50% 50%;
-    width: 100%; */
-    background-position: 50% 50%;
-    background-repeat: no-repeat !important;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+
 }
 
 .bg-image1 {

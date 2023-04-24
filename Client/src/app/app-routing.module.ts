@@ -25,6 +25,11 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { IndexComponent } from './User/index/index.component';
 import { ProductComponent } from './User/product/product.component';
 import { IntroComponent } from './User/intro/intro.component';
+import { NewsComponent } from './User/news/news.component';
+import { OderHistoryComponent } from './User/oder-history/oder-history.component';
+import { CustomOderPageComponent } from './User/custom-oder-page/custom-oder-page.component';
+import { CartPageComponent } from './User/cart-page/cart-page.component';
+import { ShowProductComponent } from './User/show-product/show-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/home', pathMatch: 'full' },
@@ -60,7 +65,12 @@ const routes: Routes = [
     children: [
       { path: 'home', component: IndexComponent },
       { path: 'product', component: ProductComponent },
-      { path: 'intro', component: IntroComponent }
+      { path: 'intro', component: IntroComponent },
+      { path: 'News', component: NewsComponent },
+      { path: 'OderHistory', component: OderHistoryComponent },
+      { path: 'CustomOderPage', component: CustomOderPageComponent },
+      { path: 'CartPage', component: CartPageComponent },
+      { path: 'product/ShowProduct/:id', component: ShowProductComponent }
     ]
   }
 ];
