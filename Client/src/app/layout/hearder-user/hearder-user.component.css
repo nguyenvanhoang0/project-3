@@ -409,13 +409,11 @@
     font-size: 1.7rem;
     font-weight: 10;
     cursor: pointer;
-}
-
-.header-bottom__notify-item a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 100;
 }
+
 
 .header-bottom__notify-item::after {
     content: '';
