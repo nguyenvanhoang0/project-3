@@ -198,7 +198,10 @@ html {
 .add-to-cart-button:hover p {
     color: var(--white-color);
     cursor: pointer;
-    background-color: var(--primary-color);
+    background-color: #FB9086;
+    border: 2px #FB9086 solid;
+    color: #000;
+
 }
 
 .add-to-cart-button:hover a {

@@ -39,7 +39,9 @@
 .grid__column-9-news-title {
     font-size: 2.4rem;
     min-width: 300px;
+    font-weight: 100;
     line-height: 24px;
+    margin-bottom: 12px;
 }
 
 
@@ -51,4 +53,18 @@
 .grid__column-4:hover .grid__column-4-news_img {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
+}
+
+
+.container-news-date {
+    font-size: 1.4rem;
+}
+
+.container-news-date::after {
+    content: '';
+    display: block;
+    border-bottom: 1px var(--text-color) solid;
+    width: 14%;
+    margin-top: 5px;
+    margin-left: 0px;
 }

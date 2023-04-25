@@ -296,6 +296,7 @@
 .header-bottom__item-text {
     color: var(--white-color);
     margin: 2px 0 0 0;
+    cursor: pointer;
 }
 
 .header-bottom-list-icon:hover {
@@ -309,6 +310,7 @@
 .expand-icon {
     width: 1.4rem;
     margin: 0 0px 0px 7px;
+    cursor: pointer;
 }
 
 .header-bottom__item {
