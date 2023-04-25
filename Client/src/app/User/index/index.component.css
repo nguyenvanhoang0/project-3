@@ -1,0 +1,254 @@
+/* app container */
+.container-slideShow img {
+    width: 100%;
+}
+
+.container-slideShow {
+    margin-bottom: 30px;
+}
+
+.container-product-of-ours {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.container-product-title-icon {
+    margin: 0 9px 0 6px;
+
+}
+
+.container-product-of-ours .grid__row {
+    margin-top: 32px;
+}
+
+.container-product-of-ours .grid__column-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container-product-popular {
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+/* product popular */
+.container-product-popular {
+    margin-top: 30px;
+}
+
+.container-product-popular .grid {
+    padding-top: 35px;
+}
+
+.product-popular-title {
+    border: 3px dotted var(--white-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 42px;
+    color: rgb(234, 221, 75);
+}
+
+.grid__column-6-img {
+    /* position: relative; */
+    width: 100%;
+}
+
+
+.grid__column-6-img img {
+    animation: fadeIn ease-in 0.3s;
+}
+
+/* .grid__column-6-img__no-hover {
+    position: absolute;
+}
+
+.grid__column-6-img__has-hover {
+    position: absolute;
+} */
+
+.grid__column-6-img:hover .grid__column-6-img__has-hover {
+    display: none;
+}
+
+.product-item__column-6 {
+    width: 100%;
+    display: flex;
+}
+
+.product-item__column-6 .grid__column-6-img {
+    width: 50%;
+    display: grid;
+}
+
+.grid__column-6-img__no-hover {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.grid__column-6-img__has-hover {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.product-item__column-6 .product-content {
+    width: 50%;
+}
+
+.grid__column-6-img .grid__column-6-img__no-hover {
+    width: 100%;
+}
+
+.grid__column-6-img .grid__column-6-img__has-hover {
+    width: 100%;
+}
+
+.product-content {
+    align-self: center;
+}
+
+.container-product-popular .grid__row {
+    padding-bottom: 95px;
+}
+
+.added-to-cart-button {
+    margin: 0 auto;
+    width: 50%;
+    font-size: 1.6rem;
+    padding-top: 12px;
+    display: flex;
+}
+
+.added-to-cart-text {
+    list-style: none;
+    text-decoration: none;
+    color: var(--black-color);
+    padding-left: 2px;
+    margin-right: 4px;
+}
+
+.img-inner {
+    width: 100%;
+}
+
+/* product news  */
+
+.container-product-news .grid {
+    margin-top: 30px;
+    margin-bottom: 67px;
+}
+
+.product-news-main {
+    margin-top: 25px;
+}
+
+.product-news-img-inner {
+    width: 100%;
+    height: 280px;
+}
+
+.product-news-title {
+    font-size: 2.1rem;
+    line-height: 2.6rem;
+    margin: 5px 0px 8px 6px;
+}
+
+.product-news-title a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.product-news-main,
+.grid__column-4:hover {
+    cursor: pointer;
+}
+
+.product-news-date {
+    font-size: 1.4rem;
+    /* font-weight: bold; */
+    margin-left: 8px;
+    color: var(--text-color);
+}
+
+.product-news-date:hover {
+    color: var(--black-color);
+}
+
+.product-news-date::after {
+    content: '';
+    display: block;
+    border-bottom: 1px var(--text-color) solid;
+    width: 33px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.product-news-content a {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 100;
+    text-decoration: none;
+    line-height: 1.8rem;
+}
+
+.product-news-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    margin: 12px 4px 12px 8px;
+}
+
+.product-news-content:hover {
+    color: var(--black-color);
+}
+
+.container-bottom {
+    width: 100%;
+}
+
+/* container bottom */
+.container-bottom {
+    background-image: url(../../../assets/img/png/background-container-bottom.jpg);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50%;
+    width: 100%;
+}
+
+
+.container-bottom-list {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+}
+
+.container-bottom__item {
+    padding-top: 36px;
+    font-weight: bold;
+}
+
+.container-colection {
+    color: var(--white-color);
+    font-size: 2.4rem;
+}
+
+.container-ship {
+    color: #EADD4B;
+    font-size: 4rem;
+    line-height: 48px;
+}
+
+.container-price {
+    color: #238573;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.container-text {
+    color: var(--white-color);
+    font-size: 1.4rem;
+}
+
+.container-bottom .grid {
+    padding: 108px 0;
+}

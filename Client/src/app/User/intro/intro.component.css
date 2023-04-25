@@ -1,0 +1,77 @@
+/* .banner top */
+.banner__top {
+    background-image: url(../../../assets/img/png/about1.png);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50%;
+    width: 100%;
+    min-height: 705px;
+}
+
+.app__container {
+    margin: 40px 0 72px 0;
+}
+
+.banner__top-right {
+    margin-left: calc(100%/2);
+}
+
+
+.banner__top-title {
+    padding-top: calc(100%/2 - 48px);
+    font-size: 2.8rem;
+    font-weight: 200;
+}
+
+
+.banner__top-content {
+    line-height: 2.2rem;
+    padding-top: 19px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+
+/* end banner top */
+
+/* aboutUs-content */
+.aboutUs-content {
+    margin-top: 96px;
+}
+
+
+.grid__column-6-img {
+    width: 100%;
+}
+
+.aboutUs-content-wrap {
+    display: flex;
+}
+
+.aboutUs-content_title {
+    padding-top: calc(100%/2 - 48px);
+    font-size: 2.8rem;
+    font-weight: 200;
+}
+
+.aboutUs-content_child {
+    line-height: 2.2rem;
+    padding-top: 19px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.aboutUs-content-wrap_img {
+    margin-left: 10px;
+    margin-top: -7px;
+}
+
+.aboutUs-content-wrap_child {
+    padding-left: 34px;
+}
+
+.aboutUs-content-wrap_child .aboutUs-content_title {
+    padding-top: calc(100%/2 - 153px);
+}
+
+/* end aboutUs-content */

@@ -1,3 +1,4 @@
+// import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -17,6 +18,10 @@ import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.compo
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
+import { UpdateProductComponent } from './Admin/update-product/update-product.component';
+import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
+import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
+import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 
 import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
 
@@ -25,6 +30,15 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { IndexComponent } from './User/index/index.component';
 import { ProductComponent } from './User/product/product.component';
 import { IntroComponent } from './User/intro/intro.component';
+import { NewsComponent } from './User/news/news.component';
+import { OderHistoryComponent } from './User/oder-history/oder-history.component';
+import { CustomOderPageComponent } from './User/custom-oder-page/custom-oder-page.component';
+import { CartPageComponent } from './User/cart-page/cart-page.component';
+import { ShowProductComponent } from './User/show-product/show-product.component';
+import { ShowBranchComponent } from './User/show-branch/show-branch.component';
+import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.component';
+import { ContactComponent } from './User/contact/contact.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/home', pathMatch: 'full' },
@@ -48,6 +62,11 @@ const routes: Routes = [
       { path: 'ManagerNews', component: ManagerNewsComponent },
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
       
+      { path: 'ManagerProduct/UpdateProduct/:id', component: UpdateProductComponent },
+      { path: 'UpdateBrand', component: UpdateBrandComponent },
+      { path: 'UpdateDiscount', component: UpdateDiscountComponent },
+      { path: 'UpdateGift', component: UpdateGiftComponent },
+
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
       
       
@@ -60,7 +79,16 @@ const routes: Routes = [
     children: [
       { path: 'home', component: IndexComponent },
       { path: 'product', component: ProductComponent },
-      { path: 'intro', component: IntroComponent }
+      { path: 'intro', component: IntroComponent },
+      { path: 'News', component: NewsComponent },
+      { path: 'OderHistory', component: OderHistoryComponent },
+      { path: 'CustomOderPage', component: CustomOderPageComponent },
+      { path: 'CartPage', component: CartPageComponent },
+      { path: 'product/ShowProduct/:id', component: ShowProductComponent },
+      { path: 'ShowBranch/:id', component: ShowBranchComponent },
+      { path: 'ShowGemstone', component: ShowGemstoneComponent },
+      { path: 'Contact', component: ContactComponent }
+      
     ]
   }
 ];

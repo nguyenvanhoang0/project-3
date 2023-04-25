@@ -1,0 +1,40 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #777;
+}
+
+body {
+    font-family: "Helvetica,Arial,sans-serif", sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+
+html {
+    /* mặc định các trình duyệt đều nghĩ font-size: 100% = 16px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.grid__full-width {
+    width: 1200px;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}

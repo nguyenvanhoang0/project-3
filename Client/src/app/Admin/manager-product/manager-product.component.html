@@ -1,11 +1,43 @@
 <div class="information">
     <p>manager-product works!</p>
     <h2>Product List</h2>
+    <ul class="tool">
+        <li>Brand
+            <div class="hover">
+                <ul>
+                    <li (click)="sortByPrice('asc')"><img src="../../../assets/img/svg/chart_down.svg" alt="">ascending</li>
+                    <li (click)="sortByPrice('desc')"><img src="../../../assets/img/svg/chart.svg" alt="">decrease</li>
+                    <li (click)="resetSort()"><img src="../../../assets/img/svg/hash.svg" alt="">default</li>
+                </ul>
+            </div>
+        </li>
+        <li>Gemstone
+            <div class="hover">
+                <ul>
+                    <li (click)="sortByPrice('asc')"><img src="../../../assets/img/svg/chart_down.svg" alt="">ascending</li>
+                    <li (click)="sortByPrice('desc')"><img src="../../../assets/img/svg/chart.svg" alt="">decrease</li>
+                    <li (click)="resetSort()"><img src="../../../assets/img/svg/hash.svg" alt="">default</li>
+                </ul>
+            </div>
+        </li>
+        <li>All</li>
+        <li class="price">price
+            <div class="hover">
+                <ul>
+                    <li (click)="sortByPrice('asc')"><img src="../../../assets/img/svg/chart_down.svg" alt="">ascending</li>
+                    <li (click)="sortByPrice('desc')"><img src="../../../assets/img/svg/chart.svg" alt="">decrease</li>
+                    <li (click)="resetSort()"><img src="../../../assets/img/svg/hash.svg" alt="">default</li>
+                </ul>
+            </div>
+        </li>
 
+        <li id="grids" (click)="isIndexClass = false "><img src="../../../assets/img/svg/grid.svg" alt=""></li>
+        <li id="table" (click)="isIndexClass = true"><img src="../../../assets/img/svg/table.svg" alt=""></li>
+    </ul>
     <div class="information ">
-        <div *ngIf="products" class="products flex">
-            <div *ngFor="let product of products">
-                <img [src]="product.image" alt="{{ product.title }}" width="200">
+        <div *ngIf="products" class="products flex" [ngClass]="{ 'index': isIndexClass }">
+            <div *ngFor="let product of products" class="">
+                <div class="img_product"><img [src]="product.image" alt="{{ product.title }}" width="200"></div>
 
                 <h3>{{ product.title }}</h3>
                 <p>Price: {{ product.price }}</p>
@@ -16,6 +48,28 @@
                 <a routerLink="ProductDetail/{{product.id}}">View Details</a>
             </div>
         </div>
+
+        <table class="" [ngClass]="{ 'index': !isIndexClass }">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="products">
+                <tr *ngFor="let product of products">
+                    <td>{{ product.id }}</td>
+                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.title }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
+                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.price }}</p><img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
+                    <td><span>{{ product.rating.rate  }}<img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/add.svg" alt=""></span></td>
+                </tr>
+
+            </tbody>
+        </table>
+
     </div>
 
 </div>
+

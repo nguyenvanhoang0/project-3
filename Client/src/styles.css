@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'NTR', sans-serif;
@@ -10,15 +10,223 @@
     src: url('/Client/src/assets/Font/font_ntr ') format('truetype');
 }
 
-.bt_add{
+.bt_add {
     margin-top: 25px;
     border: none;
     background-color: #71b85e;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 8px;
     color: #fff;
 }
 
-.flex{
+.flex {
     display: flex;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #777;
+    --primary-color: #000;
+    --boder-color: #dbdbdb;
+    --star-gold-color: #FFCE3E;
+    --header-hight: 120px;
+    --navbar-height: 34px;
+}
+
+body {
+    font-family: "Helvetica,Arial,sans-serif", sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+
+html {
+    /* mặc định các trình duyệt đều nghĩ font-size: 100% = 16px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.grid__full-width {
+    width: 1200px;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* responsive Test*/
+
+.grid__column-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3334%;
+}
+
+.grid__column-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+}
+
+.grid__column-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 50%;
+}
+
+/* container product */
+.container-product-title {
+    border: 3px dotted var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 42px;
+    color: var(--primary-color);
+}
+
+.grid__column-3-img {
+    width: 100%;
+    position: relative;
+}
+
+.grid__column-3-img img {
+    width: 100%;
+    animation: fadeIn ease-in 0.3s;
+}
+
+.grid__column-3-img__no-hover {
+    position: absolute;
+}
+
+.grid__column-3-img__has-hove {
+    position: absolute;
+}
+
+.grid__column-3-img:hover .grid__column-3-img__no-hover {
+    display: none;
+}
+
+.product-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.product-name {
+    color: #334862;
+    font-size: 1.8rem;
+    text-align: center;
+    min-height: 29px;
+}
+
+.product-name:hover,
+.product-name-link:hover {
+    color: var(--black-color);
+    cursor: pointer;
+}
+
+.product-price {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    position: relative;
+}
+
+.product-price__number {
+    font-size: 1.6rem;
+}
+
+.product-price-d {
+    top: -1px;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    position: absolute;
+}
+
+
+.product-price-d::after {
+    content: '';
+    display: block;
+    border-bottom: 1px red solid;
+
+}
+
+.product-price-d {
+    top: 0px;
+    margin-left: 5px;
+    font-size: 1.3rem;
+    position: absolute;
+    line-height: 10px;
+    font-weight: 500;
+}
+
+.add-to-cart-button {
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+.add-to-cart {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    /* border: 2px var(--primary-color) solid; */
+    /* padding: 5px 12px 5px 12px; */
+}
+
+.add-to-cart-button p {
+    padding: 9px;
+    text-align: center;
+    border: 2px var(--primary-color) solid;
+}
+
+.add-to-cart-button:hover p {
+    color: var(--white-color);
+    cursor: pointer;
+    background-color: #FB9086;
+    border: 2px #FB9086 solid;
+    color: #000;
+
+}
+
+.add-to-cart-button:hover a {
+    color: var(--white-color);
+    cursor: pointer;
+
+}
+
+
+.header-main__cart-img i {
+    font-size: 2.6rem;
+}
+
+
+.product-item {
+    margin-top: 36px;
+    background-color: var(--white-color);
+}
+
+
+
+.padding-left__inherit {
+    padding-left: inherit;
+}
+
+.padding-right__inherit {
+    padding-right: inherit;
 }
