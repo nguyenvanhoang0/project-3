@@ -24,7 +24,7 @@ namespace Project3.Models
             optionsBuilder.UseSqlServer(_connectionString);
         }
 
-        public DbSet<Project3.Models.Account> Account { get; set; } = default!;
+        public DbSet<Project3.Models.Account> Accounts { get; set; } = default!;
 
         public DbSet<Project3.Models.Order> Order { get; set; } = default!;
 

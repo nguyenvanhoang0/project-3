@@ -72,7 +72,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/7.0.4": {
+      "Microsoft.AspNetCore.OpenApi/7.0.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "1.4.3"
@@ -3878,10 +3878,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/7.0.4": {
-      "sha512": "1zlq5/xtbC9AyNHK2EBaL2RuCepoWHAXSxN68io/nndYLOTz/tgGmwtJvDZkUzFYooAXaNlavzcRlgS4muqgOA==",
+    "Microsoft.AspNetCore.OpenApi/7.0.5": {
+      "sha512": "yxFvk9BsgL/eDJVsPp0zbUpL73u9uXLYTnWoMBvnJdm8+970YuhM2XWcDOyetjkp8l8z00MHgfYHCRXOnLx/+Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/7.0.4",
+      "path": "microsoft.aspnetcore.openapi/7.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3889,7 +3889,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net7.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net7.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
@@ -11129,7 +11129,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Dapper >= 2.0.123",
-      "Microsoft.AspNetCore.OpenApi >= 7.0.4",
+      "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
@@ -11183,7 +11183,7 @@
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
-            "version": "[7.0.4, )"
+            "version": "[7.0.5, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

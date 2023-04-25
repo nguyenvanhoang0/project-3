@@ -2,68 +2,46 @@
 using Project3.Interface;
 using Project3.Models;
 using Dapper;
+using Project3.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project3.Repository
 {
     
     public class AccountRepository : IAccountRepository
-    {
-        private readonly string _connectionString;
-
-        public AccountRepository(IConfiguration configuration)
+    {    
+        private readonly DatabaseContext _dbContext;
+        public AccountRepository(IConfiguration configuration,DatabaseContext context)
         {
-            _connectionString = configuration.GetConnectionString("SqlConnection");
+            _dbContext = context;        
         }
-        public async Task<IEnumerable<Account>> GetAllAccounts()
+        public async Task<Account> GetByIdAsync(int id)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                return await connection.QueryAsync<Account>("SELECT * FROM Accounts");
-            }
-            throw new NotImplementedException();
+            return await _dbContext.Accounts.FindAsync(id); 
         }
 
-        public async Task<Account> GetAccountById(int id)
+        public async Task<IEnumerable<Account>> GetAllAsync()
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                return await connection.QuerySingleOrDefaultAsync<Account>("SELECT * FROM Accounts WHERE Id = @Id", new { Id = id });
-            }
-            throw new NotImplementedException();
+            return await _dbContext.Accounts.ToListAsync();
         }
 
-       
-        public async Task CreateAccount(Account account)
+        public async Task AddAsync(Account account)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                await connection.ExecuteAsync("INSERT INTO Accounts (Name, Email, Password, Phone, Address, CreatedAt, UpdatedAt) " +
-                 "VALUES (@Name, @Email, @Password, @Phone, @Address, @CreatedAt, @UpdatedAt)", account);
-            }
-            throw new NotImplementedException();
+            await _dbContext.Accounts.AddAsync(account);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateAccount(Account account)
+        public async Task UpdateAsync(Account account)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                await connection.ExecuteAsync("UPDATE Accounts SET Name = @Name, Email = @Email, Password = @Password, " +
-                    "Phone = @Phone, Address = @Address, UpdatedAt = @UpdatedAt WHERE Id = @Id", account);
-            }
-            throw new NotImplementedException();
+            _dbContext.Accounts.Update(account);
+            await _dbContext.SaveChangesAsync();
         }
-        public async Task DeleteAccount(int id)
+
+        public async Task DeleteAsync(Account account)
         {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                await connection.OpenAsync();
-                await connection.ExecuteAsync("DELETE FROM Accounts WHERE Id = @Id", new { Id = id });
-            }
-            throw new NotImplementedException();
+            _dbContext.Accounts.Remove(account);
+            await _dbContext.SaveChangesAsync();
         }
     }
+
 }

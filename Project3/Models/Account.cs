@@ -3,27 +3,31 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project3.Models
 {
-    [Table("accounts")]
+    [Table("Accounts")]
     public class Account
     {
         
         [Key]
-        [Column("account_id")]
-        public int AccountId { get; set; }
-
-        [Column("username")]
-        public string UserName { get; set; }
-
+        [Column("id")]
+        public int Id { get; set; }
+        [Column("name")]
+        public string Name { get; set; } = null!;
         [Column("email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
         [Column("password")]
-        public string Password { get; set; }
-        [Column("status")]
-        public string Status { get; set; }
-        [Column("role")]
-        public string Role { get; set; }
+        public string Password { get; set; } = null!;
+        [Column("phone")]
+        public string? Phone { get; set; }
+        [Column("address")]
+        public string? Address { get; set; }
+        [Column("created_at")]
+        public DateTime? CreatedAt { get; set; }
+        [Column("updated_at")]
+        public DateTime? UpdatedAt { get; set; }
 
+        //public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     }
 }

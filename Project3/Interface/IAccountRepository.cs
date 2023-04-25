@@ -5,11 +5,11 @@ namespace Project3.Interface
 {
     public interface IAccountRepository
     {
-        Task<IEnumerable<Account>> GetAllAccounts();
-        Task<Account> GetAccountById(int id);
-        Task CreateAccount(Account account);
-        Task UpdateAccount(Account account);
-        Task DeleteAccount(int id);
+        Task<Account> GetByIdAsync(int id);
+        Task<IEnumerable<Account>> GetAllAsync();
+        Task AddAsync(Account account);
+        Task UpdateAsync(Account account);
+        Task DeleteAsync(Account account);
 
     }
 }

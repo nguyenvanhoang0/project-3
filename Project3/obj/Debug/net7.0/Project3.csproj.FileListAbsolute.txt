@@ -838,3 +838,4 @@ C:\Users\DELL\project\Jewelry\Project3\obj\Debug\net7.0\refint\Project3.dll
 C:\Users\DELL\project\Jewelry\Project3\obj\Debug\net7.0\Project3.pdb
 C:\Users\DELL\project\Jewelry\Project3\obj\Debug\net7.0\Project3.genruntimeconfig.cache
 C:\Users\DELL\project\Jewelry\Project3\obj\Debug\net7.0\ref\Project3.dll
+C:\Users\DELL\project\Jewelry\Project3\bin\Debug\net7.0\Dapper.dll
