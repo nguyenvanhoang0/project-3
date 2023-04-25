@@ -3,6 +3,7 @@
     src: url('/Client/src/assets/Font/font_ntr ') format('truetype');
 }
 *{
+  font-family: 'NTR', sans-serif;
   margin: 0px;
   padding: 0px;
 }
