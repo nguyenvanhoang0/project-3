@@ -1,9 +1,16 @@
 <div class="information">
     <p>manager-product works!</p>
     <h2>Product List</h2>
-
+    <ul>
+        <li>Brand</li>
+        <li>Gemstone</li>
+        <li>All</li>
+        <li></li>
+        <li id="grids" (click)="toggleClass()"><img src="../../../assets/img/svg/grid.svg" alt=""></li>
+        <li id="table" (click)="toggleClass()"  ><img src="../../../assets/img/svg/table.svg" alt=""></li>
+    </ul>
     <div class="information ">
-        <div *ngIf="products" class="products flex">
+        <div *ngIf="products" class="products flex grids"[ngClass]="classObj.grids ? 'grids' : 'table'">
             <div *ngFor="let product of products">
                 <img [src]="product.image" alt="{{ product.title }}" width="200">
 
@@ -16,6 +23,27 @@
                 <a routerLink="ProductDetail/{{product.id}}">View Details</a>
             </div>
         </div>
+
+        <table class="table" [ngClass]="classObj.table ? 'table' : 'grids'">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>name</th>
+                <th>price</th>
+                <th>quantity</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="products">
+              <tr *ngFor="let product of products" >
+                <td>{{ product.id }}</td>
+                <td>{{ product.title }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantity }}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          
     </div>
 
 </div>

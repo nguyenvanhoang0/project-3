@@ -20,4 +20,36 @@ export class ManagerProductComponent  {
         this.products = response;
       });
   }
+
+  classObj = {
+    grids: true,
+    table: false
+  };
+
+  toggleClass() {
+    this.classObj = {
+      grids: !this.classObj.grids,
+      table: !this.classObj.table
+    };
+  }
+
+  // changeClassBlock() {
+  //   const element = document.querySelector('.grids');
+  //   if (element) {
+  //     element.classList.replace('grids', 'block');
+  //     element.classList.replace('table', 'nones');
+  //   }
+  // }
+
+  // changeClassNone() {
+  //   const element = document.querySelector('.table');
+  //   if (element) {
+
+  //     element.classList.replace('table', 'block');
+  //   }
+  //   if (element) {
+  //     element.classList.replace('grids', 'nones');
+
+  //   }
+  // }
 }
