@@ -213,19 +213,6 @@
     background-repeat: no-repeat !important;
     background-position: 50% 50%;
     width: 100%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat !important;
-
-}
-
-.bg-image1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
 }
 
 
