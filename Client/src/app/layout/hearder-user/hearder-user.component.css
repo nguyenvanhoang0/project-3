@@ -298,6 +298,14 @@
     margin: 2px 0 0 0;
 }
 
+.header-bottom-list-icon:hover {
+    color: #FB9086;
+}
+
+.header-bottom__item-text:hover {
+    color: #FB9086;
+}
+
 .expand-icon {
     width: 1.4rem;
     margin: 0 0px 0px 7px;
@@ -414,6 +422,9 @@
     font-weight: 100;
 }
 
+.header-bottom__notify-item:hover {
+    color: #ff8074;
+}
 
 .header-bottom__notify-item::after {
     content: '';

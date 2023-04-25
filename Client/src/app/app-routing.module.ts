@@ -1,3 +1,4 @@
+// import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -32,6 +33,7 @@ import { CartPageComponent } from './User/cart-page/cart-page.component';
 import { ShowProductComponent } from './User/show-product/show-product.component';
 import { ShowBranchComponent } from './User/show-branch/show-branch.component';
 import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.component';
+import { ContactComponent } from './User/contact/contact.component';
 
 
 const routes: Routes = [
@@ -75,7 +77,8 @@ const routes: Routes = [
       { path: 'CartPage', component: CartPageComponent },
       { path: 'product/ShowProduct/:id', component: ShowProductComponent },
       { path: 'ShowBranch/:id', component: ShowBranchComponent },
-      { path: 'ShowGemstone', component: ShowGemstoneComponent }
+      { path: 'ShowGemstone', component: ShowGemstoneComponent },
+      { path: 'Contact', component: ContactComponent }
       
     ]
   }
