@@ -18,6 +18,10 @@ import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.compo
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
+import { UpdateProductComponent } from './Admin/update-product/update-product.component';
+import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
+import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
+import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 
 import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
 
@@ -58,6 +62,11 @@ const routes: Routes = [
       { path: 'ManagerNews', component: ManagerNewsComponent },
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
       
+      { path: 'ManagerProduct/UpdateProduct/:id', component: UpdateProductComponent },
+      { path: 'UpdateBrand', component: UpdateBrandComponent },
+      { path: 'UpdateDiscount', component: UpdateDiscountComponent },
+      { path: 'UpdateGift', component: UpdateGiftComponent },
+
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
       
       

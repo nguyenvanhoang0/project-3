@@ -1,6 +1,7 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -45,6 +46,10 @@ import { ShowProductComponent } from './User/show-product/show-product.component
 import { ShowBranchComponent } from './User/show-branch/show-branch.component';
 import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.component';
 import { ContactComponent } from './User/contact/contact.component';
+import { UpdateProductComponent } from './Admin/update-product/update-product.component';
+import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
+import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
+import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
 
 
 @NgModule({
@@ -82,14 +87,18 @@ import { ContactComponent } from './User/contact/contact.component';
     ShowProductComponent,
     ShowBranchComponent,
     ShowGemstoneComponent,
-    ContactComponent
+    ContactComponent,
+    UpdateProductComponent,
+    UpdateBrandComponent,
+    UpdateGiftComponent,
+    UpdateDiscountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-    // CKEditorModule,
+    HttpClientModule,
+    CKEditorModule
   ],
 
 
@@ -100,9 +109,9 @@ import { ContactComponent } from './User/contact/contact.component';
 
 // @NgModule({
 //   imports: [
-//     CKEditorModule,
-//     FormsModule,
-//     ReactiveFormsModule
+//     // CKEditorModule,
+//     // FormsModule
+    
 //   ]
 // })
 

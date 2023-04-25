@@ -61,9 +61,9 @@
             <tbody *ngIf="products">
                 <tr *ngFor="let product of products">
                     <td>{{ product.id }}</td>
-                    <td routerLink="ProductDetail/{{product.id}}"><span>{{ product.title }} <img  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
-                    <td routerLink="ProductDetail/{{product.id}}"><span>{{ product.price }}<img  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
-                    <td><span>{{ product.rating.rate  }}<img  src="../../../assets/img/svg/add.svg" alt=""></span></td>
+                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.title }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
+                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.price }}</p><img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
+                    <td><span>{{ product.rating.rate  }}<img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/add.svg" alt=""></span></td>
                 </tr>
 
             </tbody>
