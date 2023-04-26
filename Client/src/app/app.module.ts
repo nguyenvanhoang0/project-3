@@ -1,14 +1,11 @@
 
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { HttpClientModule } from '@angular/common/http'; 
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -98,7 +95,9 @@ import { UpdateDiscountComponent } from './Admin/update-discount/update-discount
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CKEditorModule
+    CKEditorModule,
+    ReactiveFormsModule
+
   ],
 
 

@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ShowProductService } from 'src/app/Service/show-product/show-product.service';
 import { Product } from 'src/app/Service/show-product/show-product.interface';
 
-import * as Editor from '@ckeditor/ckeditor5-build-classic';
-import { CKEditorComponent } from '@ckeditor/ckeditor5-angular';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 @Component({
   selector: 'app-update-product',

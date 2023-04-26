@@ -1,9 +1,11 @@
-import { Component, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Component, ViewChildren, ElementRef, QueryList ,OnInit  } from '@angular/core';
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import tinymce from 'tinymce';
 // import * as Quill from 'quill';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { ProductService } from '../../Service/product/product.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -13,31 +15,41 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 
 
-export class AddProductComponent {
+export class AddProductComponent implements OnInit{
   public Editor = ClassicEditor;
 
-  // public Editor = ClassicEditor;
-
-
-  // selectedFile: File | null = null;
-  // fileName: string | ArrayBuffer | null = null
-  // imageSrc: string | ArrayBuffer | null = null;
-
-  // onFileSelected(event : any) {
-  //   this.selectedFile = <File>event.target.files[0];
-  //   this.fileName = this.selectedFile.name;
-
-  //   const reader = new FileReader();
-  //   reader.onload = (e: any) => {
-  //     this.imageSrc = e.target.result;
-  //   };
-
-  //   reader.readAsDataURL(this.selectedFile);
-  // }
-
-  inputIndices = [0, 1, 2, 3, 4];
+  // inputIndices = [0, 1, 2, 3, 4];
   files: { src: string, name: string }[] = [];
-  // files: (File | null)[] = [null, null, null, null, null];
+  form!: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private productService: ProductService
+  ) { }
+
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      title: ['', Validators.required],
+      price: ['', Validators.required],
+      description: ['', Validators.required],
+      category: ['', Validators.required],
+      img: ['']
+    });
+  }
+
+  onSubmit(): void {
+    const product = this.form.value;
+    const images = this.files.map(file => file.src).join(',');
+
+    product.image = images;
+
+    this.productService.addProduct(product).subscribe(
+      response => console.log(response),
+      error => console.log(error),
+      
+    );
+  }
+
   onFileSelecteds(event: any, i: number) {
     const file: File | null = event?.target?.files?.[0] || null;
     if (file) {
@@ -48,15 +60,6 @@ export class AddProductComponent {
       reader.readAsDataURL(file);
     }
   }
-
-  
-
-  // public Editor = ClassicEditor;
-  // public content: string = '<p>Initial content</p>';
-
-  
-
-
 
 }
 

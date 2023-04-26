@@ -1,18 +1,18 @@
 <div class="">
     <!-- <h2>from add product</h2> -->
-    <form class="form flex">
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
             <div>
                 <p>General information</p>
             </div>
             <div>
                 <label for="">Name product</label><br>
-                <input type="text" >
+                <input type="text" id="title" formControlName="title" class="form-control" >
             </div>
             <div class="flex extra">
                 <div>
                     <label for="">Price</label><br>
-                    <input type="text" >
+                    <input type="text" id="price" formControlName="price" class="form-control" >
                 </div>
                 <div class="">
                     <label for="">Quantity</label><br>
@@ -34,7 +34,7 @@
 
             </div> -->
 
-            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor></div>
+            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="description" formControlName="description" class="form-control"></ckeditor></div>
 
            
 
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <button class="bt_add">Add Product</button>
+            <button class="bt_add"  type="submit">Add Product</button>
         </div>
         <div class=" left ">
             <div class="information formadd">
