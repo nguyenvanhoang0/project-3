@@ -27,6 +27,7 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #777;
+    --pink-color: #f46b75;
     --primary-color: #000;
     --boder-color: #dbdbdb;
     --star-gold-color: #FFCE3E;
@@ -68,6 +69,32 @@ html {
     margin-left: -5px;
     margin-right: -5px;
 }
+
+/* button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white-color);
+    line-height: 1.6rem;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--pink-color);
+}
+
+
 
 /* responsive Test*/
 
@@ -201,8 +228,8 @@ html {
     background-color: #FB9086;
     border: 2px #FB9086 solid;
     color: #000;
-
 }
+
 
 .add-to-cart-button:hover a {
     color: var(--white-color);
