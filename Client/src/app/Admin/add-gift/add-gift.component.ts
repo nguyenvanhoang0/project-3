@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-gift',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-gift.component.css']
 })
 export class AddGiftComponent {
+  public Editor = ClassicEditor;
+
   inputIndices = [0, 1, 2, 3, 4];
   files: { src: string, name: string }[] = [];
   // files: (File | null)[] = [null, null, null, null, null];

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-news',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-news.component.css']
 })
 export class AddNewsComponent {
+  public Editor = ClassicEditor;
 
 }

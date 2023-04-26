@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-gem',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-gem.component.css']
 })
 export class AddGemComponent {
+  public Editor = ClassicEditor;
 
 }

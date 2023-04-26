@@ -33,6 +33,11 @@
                 </div>
 
             </div> -->
+
+            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor></div>
+
+           
+
             <div *ngIf="files" class=" ">
                 <div>Image</div>
                 <div class="flex show_list">
@@ -46,6 +51,7 @@
                     </div>
                 </div>
             </div>
+
             <button class="bt_add">Add Product</button>
         </div>
         <div class=" left ">

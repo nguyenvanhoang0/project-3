@@ -23,6 +23,11 @@
     display: flex;
 }
 
+.ckeditor{
+    width: 100%;
+    margin-top: 20px;
+}
+
 :root {
     --white-color: #fff;
     --black-color: #000;

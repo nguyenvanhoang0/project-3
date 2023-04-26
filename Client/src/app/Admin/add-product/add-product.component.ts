@@ -3,6 +3,7 @@ import { Component, ViewChildren, ElementRef, QueryList } from '@angular/core';
 // import tinymce from 'tinymce';
 // import * as Quill from 'quill';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-product',
@@ -13,6 +14,8 @@ import { Component, ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 
 export class AddProductComponent {
+  public Editor = ClassicEditor;
+
   // public Editor = ClassicEditor;
 
 
