@@ -7,12 +7,13 @@
             </div>
             <div>
                 <label for="">Name product</label><br>
-                <input type="text" value="{{ product?.title }}" >
+                <input type="text" value="{{ product?.title }}" id="title"  name="title" required>
+                <!-- <input type="text" value="{{ product?.title }}" id="title" [(ngModel)]="product.title" name="title" required> -->
             </div>
             <div class="flex extra">
                 <div>
                     <label for="">Price</label><br>
-                    <input type="text" >
+                    <input type="text" value="{{ product?.price }}">
                 </div>
                 <div class="">
                     <label for="">Quantity</label><br>
@@ -20,7 +21,7 @@
                 </div>
                 
             </div>
-            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+            <ckeditor [editor]="Editor" data="{{ product?.description }}"></ckeditor>
             <!-- <ckeditor ></ckeditor> -->
             <!-- <ckeditor [editor]="Editor" [(ngModel)]="content"></ckeditor> -->
 

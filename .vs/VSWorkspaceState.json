@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Project3",
+    "\\Project3\\bin\\Release",
     "\\Project3\\Controllers"
   ],
-  "SelectedNode": "\\Project3\\Controllers\\ProductController.cs",
+  "SelectedNode": "\\Project3\\Controllers\\MaterialsController.cs",
   "PreviewInSolutionExplorer": false
 }

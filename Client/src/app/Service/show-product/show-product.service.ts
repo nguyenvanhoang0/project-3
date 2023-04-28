@@ -19,5 +19,10 @@ export class ShowProductService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Product>(url);
   }
+
+  updateProduct(product: Product): Observable<Product> {
+    const url = `${this.apiUrl}/${product.id}`;
+    return this.http.put<Product>(url, product);
+  }
  
 }

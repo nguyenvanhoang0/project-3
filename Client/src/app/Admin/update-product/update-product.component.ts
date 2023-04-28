@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ShowProductService } from 'src/app/Service/show-product/show-product.service';
 import { Product } from 'src/app/Service/show-product/show-product.interface';
 
@@ -30,13 +30,30 @@ export class UpdateProductComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ShowProductService
-  ) {}
+    private productService: ShowProductService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    if (typeof this.product !== 'undefined' && this.product !== null) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.productService.getProductById(id).subscribe((product) => {
       this.product = product;
     });
   }
+  }
+
+  onSubmit(): void {
+    if (typeof this.product !== 'undefined' && this.product !== null) {
+    if (this.product) {
+      this.productService.updateProduct(this.product).subscribe(() => this.goBack());
+    }
+  }
+  }
+
+  goBack(): void {
+    this.router.navigateByUrl('/products');
+  }
+  
+
 }

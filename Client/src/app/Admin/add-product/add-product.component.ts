@@ -48,6 +48,7 @@ export class AddProductComponent implements OnInit{
       error => console.log(error),
       
     );
+    console.log(images)
   }
 
   onFileSelecteds(event: any, i: number) {
