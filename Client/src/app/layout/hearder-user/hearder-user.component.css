@@ -1,6 +1,11 @@
 .header {
     height: var(--header-hight);
     background-color: var(--white-color);
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .navbar-list {
@@ -465,6 +470,7 @@
 
 /* header bottom */
 .header-bottom {
+    /* background-color: #eb9fa4; */
     background-color: var(--black-color);
     position: relative;
 }
@@ -497,7 +503,7 @@
 }
 
 .header-bottom__item-text:hover {
-    color: #FB9086;
+    color: var(--text-color);
 }
 
 .expand-icon {

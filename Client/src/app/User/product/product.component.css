@@ -192,11 +192,12 @@
 /* App Container */
 .app__container {
     background-color: #F5F5F5;
+    margin-top: 54px;
 }
 
-.app__content {
+/* .app__content {
     padding-top: 49px;
-}
+} */
 
 .category {
     border-radius: 2px;

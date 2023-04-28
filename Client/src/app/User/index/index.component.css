@@ -1,4 +1,9 @@
 /* app container */
+
+.app__container {
+    margin-top: 43px;
+}
+
 .container-slideShow img {
     width: 100%;
 }
