@@ -77,7 +77,7 @@ const routes: Routes = [
     path: 'user',
     component: UserLayoutComponent,
     children: [
-      { path: 'home', component: IndexComponent },
+      { path: 'Index', component: IndexComponent },
       { path: 'product', component: ProductComponent },
       { path: 'intro', component: IntroComponent },
       { path: 'News', component: NewsComponent },

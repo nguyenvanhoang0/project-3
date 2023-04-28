@@ -142,6 +142,25 @@
 /* box__cart */
 .box__cart {
     width: 100%;
+    margin: 30px 0px 0 93px;
+    /* display: block; */
 }
 
 /* box__cart-item */
+.box__cart-item__title {
+    font-size: 2rem;
+    min-width: 159px;
+    font-weight: 600;
+
+}
+
+.box__cart-item {
+    display: flex;
+    padding: 17px 0 21px 0;
+
+}
+
+.price__Temporary {
+    font-size: 2rem;
+    font-weight: 600;
+}
