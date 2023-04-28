@@ -47,6 +47,8 @@ import { UpdateProductComponent } from './Admin/update-product/update-product.co
 import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
 import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
+import { LoginComponent } from './account/login/login.component';
+import { SignupComponent } from './account/signup/signup.component';
 
 
 @NgModule({
@@ -88,7 +90,9 @@ import { UpdateDiscountComponent } from './Admin/update-discount/update-discount
     UpdateProductComponent,
     UpdateBrandComponent,
     UpdateGiftComponent,
-    UpdateDiscountComponent
+    UpdateDiscountComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
