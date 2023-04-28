@@ -52,14 +52,30 @@ namespace Project3.Controllers
 
             return Ok(accounts);
         }
-
-        [HttpPost]
-       
-        public async Task<ActionResult> AddAsync([FromBody] Account account)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] Account account)
         {
-            await _accountRepository.AddAsync(account);
+            var result = await _accountRepository.Register(account);
 
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = account.Id }, account);
+            if (result == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(result);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] Account account)
+        {
+            var result = await _accountRepository.Login(account);
+
+            if (result == null)
+            {
+                return Unauthorized();
+            }
+
+            return Ok(result);
         }
 
         [HttpPut("{id}")]

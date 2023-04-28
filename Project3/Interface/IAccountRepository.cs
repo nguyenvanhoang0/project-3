@@ -7,7 +7,8 @@ namespace Project3.Interface
     {
         Task<Account> GetByIdAsync(int id);
         Task<IEnumerable<Account>> GetAllAsync();
-        Task AddAsync(Account account);
+        Task<Account> Register(Account account);
+        Task<object> Login(Account account);
         Task UpdateAsync(Account account);
         Task DeleteAsync(Account account);
 

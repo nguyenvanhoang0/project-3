@@ -2,83 +2,77 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Project3.Interface;
 using Project3.Models;
 
 namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductsController : ControllerBase
     {
-        private readonly DatabaseContext _context;
+        private readonly IProductRepository _productRepository;
 
-        public ProductController(DatabaseContext context)
+        public ProductsController(IProductRepository productRepository)
         {
-            _context = context;
+            _productRepository = productRepository;
         }
 
-        [HttpGet("GetAllProducts")]
-        public async Task<IActionResult> GetAllProducts()
+        [HttpGet]
+        [Produces("application/json")]
+        public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            try {
-                var products = await _context.Products.ToListAsync();
-                
-            }
-            catch(Exception ee)
-            {
-                int xxx = 0;
-            }
-            return Ok();
+            var products = await _productRepository.GetAllProductsAsync();
+            return Ok(products);
+        }
 
+        [HttpGet("{id}")]
+        [Produces("application/json")]
+        public async Task<ActionResult<Product>> GetProductById(int id)
+        {
+            var product = await _productRepository.GetProductByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(Product product)
+        public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
-        }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProductById(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            if (product == null)
+            var createdProduct = await _productRepository.CreateProductAsync(product);
+            return CreatedAtAction(nameof(GetProductById), new { id = createdProduct.Id }, createdProduct);
+        }
+
+        [HttpPut("{id}")]
+        [Produces("application/json")]
+        public async Task<ActionResult<Product>> UpdateProduct(int id, [FromBody] Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var updatedProduct = await _productRepository.UpdateProductAsync(id, product);
+            if (updatedProduct == null)
             {
                 return NotFound();
             }
 
-            return product;
-        }
-
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, Product product)
-        {
-            if (id != product.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(product).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok(updatedProduct);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<ActionResult> DeleteProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            await _productRepository.DeleteProductAsync(id);
             return NoContent();
         }
-
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project3.Models
 {
-    [Table("orderdeails")]
+    [Table("Order_Details")]
     public class OrderDetail
         {
             public int Id { get; set; }

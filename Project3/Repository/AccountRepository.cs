@@ -4,6 +4,10 @@ using Project3.Models;
 using Dapper;
 using Project3.Controllers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Project3.Repository
 {
@@ -24,11 +28,56 @@ namespace Project3.Repository
         {
             return await _dbContext.Accounts.ToListAsync();
         }
-
-        public async Task AddAsync(Account account)
+        public async Task<Account> Register(Account account)
         {
+            // Check if email already exists
+            if (await _dbContext.Accounts.AnyAsync(x => x.Email == account.Email))
+            {
+                return null;
+            }
+
+            account.Password = BCrypt.Net.BCrypt.HashPassword(account.Password);
+
             await _dbContext.Accounts.AddAsync(account);
             await _dbContext.SaveChangesAsync();
+
+            return account;
+        }
+
+        public async Task<object> Login(Account account)
+        {
+            var user = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Email == account.Email);
+
+            // Check if email exists
+            if (user == null)
+            {
+                return null;
+            }
+
+            // Check if password is correct
+            if (!BCrypt.Net.BCrypt.Verify(account.Password, user.Password))
+            {
+                return null;
+            }
+
+            // Create JWT token
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes("your secret key here");
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
+
+            return new { Token = tokenString };
         }
 
         public async Task UpdateAsync(Account account)
