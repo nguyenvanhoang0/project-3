@@ -21,7 +21,10 @@
                 </div>
                 
             </div>
-            <ckeditor [editor]="Editor" data="{{ product?.description }}"></ckeditor>
+            <div class="ckeditor">
+                <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="description" formControlName="description" class="form-control"></ckeditor>
+           </div>
+            <!-- <ckeditor [editor]="Editor" data="{{ product?.description }}"></ckeditor> -->
             <!-- <ckeditor ></ckeditor> -->
             <!-- <ckeditor [editor]="Editor" [(ngModel)]="content"></ckeditor> -->
 
@@ -54,7 +57,7 @@
         <div class=" left ">
             <div class="information formadd">
                 <div class="flex extra">
-                    <p>Image</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                    <p>Image</p><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 <div class="">
                     <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
@@ -64,7 +67,7 @@
             </div>
             <div class="information formadd">
                 <div class="flex extra">
-                    <p>Brand</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                    <p>Brand</p><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 <select name="my-select" id="my-select" class="add_extra">
                     <option value="option1">Option 1</option>
@@ -74,7 +77,7 @@
             </div>
             <div class="information formadd" >
                 <div class="flex extra">
-                    <p>Categories</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                    <p>Categories</p><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 <select name="my-select" id="my-select" class="add_extra">
                     <option value="option1">Option 1</option>
@@ -84,7 +87,7 @@
             </div>
             <div class="information formadd">
                 <div class="flex extra">
-                    <p>Image</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                    <p>Image</p><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 
             </div>

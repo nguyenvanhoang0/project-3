@@ -13,4 +13,6 @@ export class ProductService {
   addProduct(product: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, product);
   }
+
+  
 }

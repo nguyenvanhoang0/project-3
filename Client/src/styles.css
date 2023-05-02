@@ -28,6 +28,11 @@
     margin-top: 20px;
 }
 
+label p {
+    margin-left: 3px ;
+    color: red;
+}
+
 :root {
     --white-color: #fff;
     --black-color: #000;
