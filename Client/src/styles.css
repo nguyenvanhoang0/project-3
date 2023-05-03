@@ -38,7 +38,7 @@ label p {
     font-size: 13px;
 }
 
-.add input{
+.add input , select{
     border: 1px #ccced1 solid;
     border-radius: 5px;
     padding: 5px 10px;
