@@ -20,11 +20,11 @@
     padding: 20px;
 }
 
-.products> div:hover{
+.products>div:hover {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 
-.img_product{
+.img_product {
     width: 100%;
     height: auto;
 }
@@ -75,7 +75,7 @@ span {
     justify-content: space-between;
 }
 
-span img{
+span img {
     display: none;
 }
 
@@ -105,37 +105,37 @@ ul li {
     /* display: block; */
     position: absolute;
     display: none;
-    margin-top: 50px;
-    transition: 1.5s;
+}
+
+.hover ul li {
+    background-color: #71b85e;
+    border: solid 1px gray;
 
 }
 
 
 .tool>li:hover .hover {
     display: block;
-    margin-top: 20px;
-    transition: 1.5s;
+    margin-top: 36px;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+
 }
 
-.hover li {
-    background-color: #fff;
-    border: gray 1px solid;
-    /* width: ; */
-}
-
-.hover li:hover {
+.hover ul li:hover {
     background-color: #a3db93;
 }
 
 .tool>li:hover {
-    background-color: #bdbdbd;
+    z-index: 100;
+    background-color: white;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
 }
 
 tbody tr:hover {
     background-color: #a3db93;
 }
 
-tbody tr td:hover img{
+tbody tr td:hover img {
     background-color: #a3db93;
     display: block;
 }
