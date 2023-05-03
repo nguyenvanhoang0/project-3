@@ -1,3 +1,7 @@
+.add_product{
+    box-sizing: content-box;
+    font-size: 13px;
+}
 
 .flex {
     display: flex;
@@ -40,7 +44,7 @@
 }
 
 input , select{
-    border: 1px gray solid;
+    border: 1px #ccced1 solid;
     border-radius: 5px;
     padding: 5px 10px;
     height: 20px;

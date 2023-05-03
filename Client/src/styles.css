@@ -29,8 +29,13 @@
 }
 
 label p {
-    margin-left: 3px ;
+    margin-left: 3px;
     color: red;
+}
+
+.add {
+    box-sizing: content-box;
+    font-size: 13px;
 }
 
 :root {

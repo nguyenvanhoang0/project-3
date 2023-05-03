@@ -1,4 +1,4 @@
-<div class="">
+<div class="add_product">
     <!-- <h2>from add product</h2> -->
     <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
@@ -6,16 +6,16 @@
                 <p>General information</p>
             </div>
             <div>
-                <label for="" class="flex">Name product <p> * </p></label>     <br>
+                <label for="" class="flex">Name product <p>*</p></label>
                 <input type="text" id="title" formControlName="title" class="form-control" >
             </div>
             <div class="flex extra">
                 <div>
-                    <label for="">Price</label><br>
+                    <label for="" class="flex ">Price  <p>*</p></label>
                     <input type="text" id="price" formControlName="price" class="form-control" >
                 </div>
                 <div class="">
-                    <label for="">Quantity</label><br>
+                    <label for="">Quantity</label>
                     <input type="text">
                 </div>
             </div>
@@ -25,7 +25,7 @@
             </div>
 
             <div *ngIf="files" class=" ">
-                <div>Image</div>
+                <div>Image  <p>*</p></div>
                 <div class="flex show_list">
                     <div *ngFor="let file of files" class="item_img">
                         <div class="show_img">
@@ -43,7 +43,7 @@
         <div class=" left ">
             <div class="information formadd">
                 <div class="flex extra">
-                    <p>Image</p><img src="../../../assets/img/addfile.svg" alt=" ">
+                    <label class="flex">Image <p>*</p></label><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 <div class="">
                     <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
