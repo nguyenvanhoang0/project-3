@@ -28,6 +28,26 @@
     margin-top: 20px;
 }
 
+label p {
+    margin-left: 3px;
+    color: red;
+}
+
+.add {
+    box-sizing: content-box;
+    font-size: 13px;
+}
+
+.add input , select{
+    border: 1px #ccced1 solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    height: 20px;
+    width: 96%;
+    background-color: transparent;
+    outline: none;
+}
+
 :root {
     --white-color: #fff;
     --black-color: #000;
