@@ -1,12 +1,13 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project3.Models
 {
-    [Table("brands")]
-    public class Brand
-        {
+
+    [Table("Categories")]
+    public partial class Category
+    {
         [Column("id")]
         public int Id { get; set; }
         [Column("name")]
@@ -20,5 +21,4 @@ namespace Project3.Models
 
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
     }
-    
 }

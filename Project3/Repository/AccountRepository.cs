@@ -12,12 +12,18 @@ using System.Text;
 namespace Project3.Repository
 {
     
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : IAccount
     {    
         private readonly DatabaseContext _dbContext;
-        public AccountRepository(IConfiguration configuration,DatabaseContext context)
+        public AccountRepository(DatabaseContext context)
         {
             _dbContext = context;        
+        }
+        public async Task<List<Account>> GetAccountsByNameAsync(string name)
+        {
+            return await _dbContext.Accounts
+                .Where(a => a.Name.Contains(name))
+                .ToListAsync();
         }
         public async Task<Account> GetByIdAsync(int id)
         {

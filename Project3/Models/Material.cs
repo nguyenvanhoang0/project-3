@@ -4,16 +4,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project3.Models
 {
-    [Table("material")]
+    [Table("Materials")]
     public class Material
-        {
-            public int Id { get; set; }
-            [Required]
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public DateTime CreatedAt { get; set; }
-            public DateTime UpdatedAt { get; set; }
-        }
-    
+    {
+        [Column("id")]
+        public int Id { get; set; }
+        [Required]
+        [Column("name")]
+        public string Name { get; set; }
+        [Column("description")]
+        public string Description { get; set; }
+        [Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+        [Column("updated_at")]
+        public DateTime UpdatedAt { get; set; }
+    }
+
 
 }

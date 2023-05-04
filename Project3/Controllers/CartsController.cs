@@ -11,55 +11,55 @@ namespace Project3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandsController : ControllerBase
+    public class CartsController : ControllerBase
     {
         private readonly DatabaseContext _context;
 
-        public BrandsController(DatabaseContext context)
+        public CartsController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/Brands
+        // GET: api/Carts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Brand>>> GetBrands()
+        public async Task<ActionResult<IEnumerable<Cart>>> GetCarts()
         {
-          if (_context.Brands == null)
+          if (_context.Carts == null)
           {
               return NotFound();
           }
-            return await _context.Brands.ToListAsync();
+            return await _context.Carts.ToListAsync();
         }
 
-        // GET: api/Brands/5
+        // GET: api/Carts/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Brand>> GetBrand(int id)
+        public async Task<ActionResult<Cart>> GetCart(int id)
         {
-          if (_context.Brands == null)
+          if (_context.Carts == null)
           {
               return NotFound();
           }
-            var brand = await _context.Brands.FindAsync(id);
+            var cart = await _context.Carts.FindAsync(id);
 
-            if (brand == null)
+            if (cart == null)
             {
                 return NotFound();
             }
 
-            return brand;
+            return cart;
         }
 
-        // PUT: api/Brands/5
+        // PUT: api/Carts/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBrand(int id, Brand brand)
+        public async Task<IActionResult> PutCart(int id, Cart cart)
         {
-            if (id != brand.Id)
+            if (id != cart.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(brand).State = EntityState.Modified;
+            _context.Entry(cart).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace Project3.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BrandExists(id))
+                if (!CartExists(id))
                 {
                     return NotFound();
                 }
@@ -80,44 +80,44 @@ namespace Project3.Controllers
             return NoContent();
         }
 
-        // POST: api/Brands
+        // POST: api/Carts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Brand>> PostBrand(Brand brand)
+        public async Task<ActionResult<Cart>> PostCart(Cart cart)
         {
-          if (_context.Brands == null)
+          if (_context.Carts == null)
           {
-              return Problem("Entity set 'DatabaseContext.Brands'  is null.");
+              return Problem("Entity set 'DatabaseContext.Carts'  is null.");
           }
-            _context.Brands.Add(brand);
+            _context.Carts.Add(cart);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
+            return CreatedAtAction("GetCart", new { id = cart.Id }, cart);
         }
 
-        // DELETE: api/Brands/5
+        // DELETE: api/Carts/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBrand(int id)
+        public async Task<IActionResult> DeleteCart(int id)
         {
-            if (_context.Brands == null)
+            if (_context.Carts == null)
             {
                 return NotFound();
             }
-            var brand = await _context.Brands.FindAsync(id);
-            if (brand == null)
+            var cart = await _context.Carts.FindAsync(id);
+            if (cart == null)
             {
                 return NotFound();
             }
 
-            _context.Brands.Remove(brand);
+            _context.Carts.Remove(cart);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool BrandExists(int id)
+        private bool CartExists(int id)
         {
-            return (_context.Brands?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Carts?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

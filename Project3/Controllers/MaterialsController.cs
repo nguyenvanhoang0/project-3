@@ -1,45 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Project3.Interface;
 using Project3.Models;
+using Project3.Repositories;
 
 namespace Project3.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class MaterialsController : ControllerBase
     {
-        private readonly DatabaseContext _context;
+        private readonly IMaterial _repository;
 
-        public MaterialsController(DatabaseContext context)
+        public MaterialsController(IMaterial repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
-        // GET: api/Materials
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Material>>> GetMaterial()
+        public async Task<IEnumerable<Material>> GetAllMaterials()
         {
-          if (_context.Material == null)
-          {
-              return NotFound();
-          }
-            return await _context.Material.ToListAsync();
+            return await _repository.GetAllMaterialsAsync();
         }
 
-        // GET: api/Materials/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Material>> GetMaterial(int id)
+        public async Task<ActionResult<Material>> GetMaterialById(int id)
         {
-          if (_context.Material == null)
-          {
-              return NotFound();
-          }
-            var material = await _context.Material.FindAsync(id);
+            var material = await _repository.GetMaterialByIdAsync(id);
 
             if (material == null)
             {
@@ -49,75 +37,40 @@ namespace Project3.Controllers
             return material;
         }
 
-        // PUT: api/Materials/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Material>> AddMaterial(Material material)
+        {
+            await _repository.AddMaterialAsync(material);
+
+            return CreatedAtAction(nameof(GetMaterialById), new { id = material.Id }, material);
+        }
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMaterial(int id, Material material)
+        public async Task<IActionResult> UpdateMaterial(int id, Material material)
         {
             if (id != material.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(material).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MaterialExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _repository.UpdateMaterialAsync(material);
 
             return NoContent();
         }
 
-        // POST: api/Materials
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Material>> PostMaterial(Material material)
-        {
-          if (_context.Material == null)
-          {
-              return Problem("Entity set 'DatabaseContext.Material'  is null.");
-          }
-            _context.Material.Add(material);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetMaterial", new { id = material.Id }, material);
-        }
-
-        // DELETE: api/Materials/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMaterial(int id)
         {
-            if (_context.Material == null)
-            {
-                return NotFound();
-            }
-            var material = await _context.Material.FindAsync(id);
+            var material = await _repository.GetMaterialByIdAsync(id);
+
             if (material == null)
             {
                 return NotFound();
             }
 
-            _context.Material.Remove(material);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteMaterialAsync(material);
 
             return NoContent();
-        }
-
-        private bool MaterialExists(int id)
-        {
-            return (_context.Material?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

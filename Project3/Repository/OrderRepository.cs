@@ -4,7 +4,7 @@ using Project3.Models;
 
 namespace Project3.Repository
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : IOrder
     {
         private readonly DatabaseContext _context;
 

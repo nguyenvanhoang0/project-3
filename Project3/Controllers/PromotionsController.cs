@@ -22,24 +22,24 @@ namespace Project3.Controllers
 
         // GET: api/Promotions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotion()
+        public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotions()
         {
-          if (_context.Promotion == null)
+          if (_context.Promotions == null)
           {
               return NotFound();
           }
-            return await _context.Promotion.ToListAsync();
+            return await _context.Promotions.ToListAsync();
         }
 
         // GET: api/Promotions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Promotion>> GetPromotion(int id)
         {
-          if (_context.Promotion == null)
+          if (_context.Promotions == null)
           {
               return NotFound();
           }
-            var promotion = await _context.Promotion.FindAsync(id);
+            var promotion = await _context.Promotions.FindAsync(id);
 
             if (promotion == null)
             {
@@ -85,11 +85,11 @@ namespace Project3.Controllers
         [HttpPost]
         public async Task<ActionResult<Promotion>> PostPromotion(Promotion promotion)
         {
-          if (_context.Promotion == null)
+          if (_context.Promotions == null)
           {
-              return Problem("Entity set 'DatabaseContext.Promotion'  is null.");
+              return Problem("Entity set 'DatabaseContext.Promotions'  is null.");
           }
-            _context.Promotion.Add(promotion);
+            _context.Promotions.Add(promotion);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPromotion", new { id = promotion.Id }, promotion);
@@ -99,17 +99,17 @@ namespace Project3.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePromotion(int id)
         {
-            if (_context.Promotion == null)
+            if (_context.Promotions == null)
             {
                 return NotFound();
             }
-            var promotion = await _context.Promotion.FindAsync(id);
+            var promotion = await _context.Promotions.FindAsync(id);
             if (promotion == null)
             {
                 return NotFound();
             }
 
-            _context.Promotion.Remove(promotion);
+            _context.Promotions.Remove(promotion);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -117,7 +117,7 @@ namespace Project3.Controllers
 
         private bool PromotionExists(int id)
         {
-            return (_context.Promotion?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Promotions?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

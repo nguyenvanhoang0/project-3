@@ -11,12 +11,13 @@ namespace Project3.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IProduct _productRepository;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProduct productRepository)
         {
             _productRepository = productRepository;
         }
+
 
         [HttpGet]
         [Produces("application/json")]
