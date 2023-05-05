@@ -4,7 +4,7 @@ using Project3.Models;
 
 namespace Project3.Repository
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : IProduct
     {
        
             private readonly DatabaseContext _dbContext;
@@ -13,7 +13,7 @@ namespace Project3.Repository
             {
                 _dbContext = dbContext;
             }
-
+            
             public async Task<List<Product>> GetAllProductsAsync()
             {
             return await _dbContext.Products.ToListAsync();

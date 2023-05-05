@@ -24,5 +24,10 @@ export class ShowProductService {
     const url = `${this.apiUrl}/${product.id}`;
     return this.http.put<Product>(url, product);
   }
+
+  searchProducts(name: string, minPrice: number, maxPrice: number): Observable<Product[]> {
+    const url = `${this.apiUrl}?title=${name}&price_gte=${minPrice}&price_lte=${maxPrice}`;
+    return this.http.get<Product[]>(url);
+  }
  
 }

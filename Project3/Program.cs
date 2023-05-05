@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Project3.Interface;
 using Project3.Models;
+using Project3.Repositories;
 using Project3.Repository;
 using System.Text;
 
@@ -15,9 +16,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IAccount, AccountRepository>();
+builder.Services.AddScoped<IProduct, ProductRepository>();
+builder.Services.AddScoped<IOrder, OrderRepository>();
+
+builder.Services.AddScoped<ICategory, CategoryRepository>();
+builder.Services.AddScoped<IMaterial,MaterialRepository>();
 
 
 // Configure JWT authentication

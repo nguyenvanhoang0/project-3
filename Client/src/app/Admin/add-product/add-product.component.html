@@ -1,21 +1,20 @@
-<div class="">
-    <!-- <h2>from add product</h2> -->
+<!-- <div class="add">
     <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
             <div>
                 <p>General information</p>
             </div>
             <div>
-                <label for="" class="flex">Name product <p> * </p></label>     <br>
+                <label for="" class="flex">Name product <p>*</p></label>
                 <input type="text" id="title" formControlName="title" class="form-control" >
             </div>
             <div class="flex extra">
                 <div>
-                    <label for="">Price</label><br>
+                    <label for="" class="flex ">Price  <p>*</p></label>
                     <input type="text" id="price" formControlName="price" class="form-control" >
                 </div>
                 <div class="">
-                    <label for="">Quantity</label><br>
+                    <label for="">Quantity</label>
                     <input type="text">
                 </div>
             </div>
@@ -25,7 +24,92 @@
             </div>
 
             <div *ngIf="files" class=" ">
-                <div>Image</div>
+                <div>Image  <p>*</p></div>
+                <div class="flex show_list">
+                    <div *ngFor="let image of images" class="item_img">
+                        <div class="show_img">
+                            <div class=""><img [src]="image.src" [alt]="image.name"></div>
+                            <span>
+                                <p>{{ image.name }}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="bt_add"  type="submit">Add Product</button>
+        </div>
+
+        <div class=" left ">
+            <div class="information formadd">
+                <div class="flex extra">
+                    <label class="flex">Image <p>*</p></label><img src="../../../assets/img/addfile.svg" alt=" ">
+                </div>
+                <div class="">
+                    <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
+                        <input type="file" (change)="onFileSelecteds($event, index)" (change)="onFile($event, index)" *ngIf="index === 0 || files[index - 1] " class="add_img">
+                      </div>
+                </div>
+            </div>
+            <div class="information formadd">
+                <div class="flex extra">
+                    <p>Brand</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                </div>
+                <select name="my-select" id="my-select" class="add_extra">
+                    <option value="option1">Option 1</option>
+                    <option value="option2" selected>Option 2</option>
+                    <option value="option3">Option 3</option>
+                  </select>
+            </div>
+            <div class="information formadd" >
+                <div class="flex extra">
+                    <p>Categories</p><img src="../../../assets/img/svg/tag.svg" alt=" ">
+                </div>
+                <select name="my-select" id="my-select" class="add_extra">
+                    <option value="option1">Option 1</option>
+                    <option value="option2" selected>Option 2</option>
+                    <option value="option3">Option 3</option>
+                  </select>
+            </div>
+            <div class="information formadd">
+                <div class="flex extra">
+                    <p>Image</p><img src="/Client/src/assets/img/addfile.svg" alt="">
+                </div>
+                
+            </div>
+        </div>
+        
+    </form>
+</div> -->
+
+
+<div class="add">
+    
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="information  right formadd">
+            <div>
+                <p>General information</p>
+            </div>
+            <div>
+                <label for="" class="flex">Name product <p>*</p></label>
+                <input type="text" id="title" formControlName="title" class="form-control" >
+            </div>
+            <div class="flex extra">
+                <div>
+                    <label for="" class="flex ">Price  <p>*</p></label>
+                    <input type="text" id="price" formControlName="price" class="form-control" >
+                </div>
+                <div class="">
+                    <label for="">Quantity</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="ckeditor">
+                 <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="description" formControlName="description" class="form-control"></ckeditor>
+            </div>
+
+            <div *ngIf="files" class=" ">
+                <div>Image  <p>*</p></div>
                 <div class="flex show_list">
                     <div *ngFor="let file of files" class="item_img">
                         <div class="show_img">
@@ -43,7 +127,7 @@
         <div class=" left ">
             <div class="information formadd">
                 <div class="flex extra">
-                    <p>Image</p><img src="../../../assets/img/addfile.svg" alt=" ">
+                    <label class="flex">Image <p>*</p></label><img src="../../../assets/img/addfile.svg" alt=" ">
                 </div>
                 <div class="">
                     <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">

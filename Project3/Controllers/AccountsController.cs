@@ -17,8 +17,8 @@ namespace Project3.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly IAccountRepository _accountRepository;
-        public AccountsController(IAccountRepository accountRepository)
+        private readonly Interface.IAccount _accountRepository;
+        public AccountsController(Interface.IAccount accountRepository)
         {
             _accountRepository = accountRepository;
         }
@@ -30,6 +30,18 @@ namespace Project3.Controllers
         public async Task<ActionResult<Account>> GetByIdAsync(int id)
         {
             var accounts = await _accountRepository.GetByIdAsync(id);
+
+            if (accounts == null)
+            {
+                return NotFound();
+            }
+
+            return accounts;
+        }
+        [HttpGet("search")]
+        public async Task<ActionResult<List<Account>>> SearchAccountsByName(string name)
+        {
+            var accounts = await _accountRepository.GetAccountsByNameAsync(name);
 
             if (accounts == null)
             {

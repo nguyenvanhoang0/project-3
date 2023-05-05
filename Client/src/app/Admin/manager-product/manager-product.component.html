@@ -1,6 +1,6 @@
 <div class="information">
-    <p>manager-product works!</p>
     <h2>Product List</h2>
+
     <ul class="tool">
         <li>Brand
             <div class="hover">
@@ -36,7 +36,7 @@
     </ul>
     <div class="information ">
         <div *ngIf="products" class="products flex" [ngClass]="{ 'index': isIndexClass }">
-            <div *ngFor="let product of products" class="">
+            <div *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: currentPage }" class="">
                 <div class="img_product"><img [src]="product.image" alt="{{ product.title }}" width="200"></div>
 
                 <h3>{{ product.title }}</h3>
@@ -59,7 +59,7 @@
                 </tr>
             </thead>
             <tbody *ngIf="products">
-                <tr *ngFor="let product of products">
+                <tr *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: currentPage }">
                     <td>{{ product.id }}</td>
                     <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.title }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
                     <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.price }}</p><img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
@@ -68,8 +68,26 @@
 
             </tbody>
         </table>
-
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
     </div>
+
+    <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchKeyword " >
+<table>
+  ...
+  <tbody *ngIf="filteredProducts && filteredProducts.length > 0">
+    <tr *ngFor="let product of filteredProducts">
+        {{ product.title }}
+    </tr>    
+  </tbody>
+  <tbody *ngIf="filteredProducts?.length === 0">
+    <tr>
+      <td colspan="4" class="text-center">Không tìm thấy sản phẩm</td>
+    </tr>
+  </tbody>
+</table>
+
 
 </div>
 

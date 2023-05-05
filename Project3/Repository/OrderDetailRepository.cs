@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project3.Models;
 
 namespace Project3.Repository
@@ -6,7 +7,7 @@ namespace Project3.Repository
     public class OrderDetailRepository
     {
         private readonly DatabaseContext _dbContext;
-        public OrderDetailRepository(IConfiguration configuration, DatabaseContext context)
+        public OrderDetailRepository(DatabaseContext context)
         {
             _dbContext = context;
         }
@@ -16,7 +17,8 @@ namespace Project3.Repository
                 .Where(o => o.OrderId == orderId)
                 .ToListAsync();
         }
-
+        [HttpGet("id")]
+        // GET: api/Orders
         public async Task<OrderDetail> GetOrderDetailByIdAsync(int id)
         {
             return await _dbContext.Set<OrderDetail>().FindAsync(id);
@@ -24,7 +26,22 @@ namespace Project3.Repository
 
         public async Task<OrderDetail> CreateOrderDetailAsync(OrderDetail orderDetail)
         {
-            await _dbContext.Set<OrderDetail>().AddAsync(orderDetail);
+            var existingOrderDetail = _dbContext.OrderDetails
+        .SingleOrDefault(od => od.OrderId == orderDetail.OrderId && od.ProductId == orderDetail.ProductId);
+
+            if (existingOrderDetail != null)
+            {
+                existingOrderDetail.Quantity += orderDetail.Quantity;
+                existingOrderDetail.Price = orderDetail.Price;
+                existingOrderDetail.UpdatedAt = DateTime.Now;
+            }
+            else
+            {
+                await _dbContext.Set<OrderDetail>().AddAsync(orderDetail);
+            }
+
+           
+            
             await _dbContext.SaveChangesAsync();
             return orderDetail;
         }

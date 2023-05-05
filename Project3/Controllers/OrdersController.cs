@@ -15,9 +15,9 @@ namespace Project3.Controllers
     
     public class OrdersController : ControllerBase
     {
-        private readonly IOrderRepository _orderRepository;
+        private readonly IOrder _orderRepository;
 
-        public OrdersController(IOrderRepository orderRepository)
+        public OrdersController(IOrder orderRepository)
         {
             _orderRepository = orderRepository;
         }

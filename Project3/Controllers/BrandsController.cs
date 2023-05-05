@@ -22,24 +22,24 @@ namespace Project3.Controllers
 
         // GET: api/Brands
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Brand>>> GetBrand()
+        public async Task<ActionResult<IEnumerable<Brand>>> GetBrands()
         {
-          if (_context.Brand == null)
+          if (_context.Brands == null)
           {
               return NotFound();
           }
-            return await _context.Brand.ToListAsync();
+            return await _context.Brands.ToListAsync();
         }
 
         // GET: api/Brands/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Brand>> GetBrand(int id)
         {
-          if (_context.Brand == null)
+          if (_context.Brands == null)
           {
               return NotFound();
           }
-            var brand = await _context.Brand.FindAsync(id);
+            var brand = await _context.Brands.FindAsync(id);
 
             if (brand == null)
             {
@@ -52,7 +52,7 @@ namespace Project3.Controllers
         // PUT: api/Brands/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBrand(int id, Brand brand)
+        public async Task<IActionResult> PutBrand(int id, Brand brand)
         {
             if (id != brand.Id)
             {
@@ -85,11 +85,11 @@ namespace Project3.Controllers
         [HttpPost]
         public async Task<ActionResult<Brand>> PostBrand(Brand brand)
         {
-          if (_context.Brand == null)
+          if (_context.Brands == null)
           {
-              return Problem("Entity set 'DatabaseContext.Brand'  is null.");
+              return Problem("Entity set 'DatabaseContext.Brands'  is null.");
           }
-            _context.Brand.Add(brand);
+            _context.Brands.Add(brand);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
@@ -99,17 +99,17 @@ namespace Project3.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(int id)
         {
-            if (_context.Brand == null)
+            if (_context.Brands == null)
             {
                 return NotFound();
             }
-            var brand = await _context.Brand.FindAsync(id);
+            var brand = await _context.Brands.FindAsync(id);
             if (brand == null)
             {
                 return NotFound();
             }
 
-            _context.Brand.Remove(brand);
+            _context.Brands.Remove(brand);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -117,7 +117,7 @@ namespace Project3.Controllers
 
         private bool BrandExists(int id)
         {
-            return (_context.Brand?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Brands?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

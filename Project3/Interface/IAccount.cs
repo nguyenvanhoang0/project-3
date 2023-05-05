@@ -3,12 +3,13 @@ using System.Numerics;
 
 namespace Project3.Interface
 {
-    public interface IAccountRepository
+    public interface IAccount
     {
         Task<Account> GetByIdAsync(int id);
         Task<IEnumerable<Account>> GetAllAsync();
         Task<Account> Register(Account account);
         Task<object> Login(Account account);
+        Task<List<Account>> GetAccountsByNameAsync(string name);
         Task UpdateAsync(Account account);
         Task DeleteAsync(Account account);
 

@@ -25,7 +25,7 @@ namespace Project3.Models
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
-        //public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
