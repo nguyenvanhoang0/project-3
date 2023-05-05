@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'NTR', sans-serif;
+    box-sizing: inherit;
 }
 
 @font-face {
@@ -48,6 +49,54 @@ label p {
     outline: none;
 }
 
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination .ngx-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pagination .ngx-pagination li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    
+    border-radius: 3px;
+  }
+  
+  .pagination .ngx-pagination li.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  .pagination .ngx-pagination li.disabled {
+    opacity: 0.5;
+  }
+  
+  .pagination .ngx-pagination li:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+
+  .pagination {
+    font-size: 135%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+  /* -------------------------------- */
+
 :root {
     --white-color: #fff;
     --black-color: #000;
@@ -65,9 +114,7 @@ body {
     font-family: "Helvetica,Arial,sans-serif", sans-serif;
 }
 
-* {
-    box-sizing: inherit;
-}
+
 
 
 html {

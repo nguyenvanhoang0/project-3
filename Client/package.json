@@ -23,6 +23,7 @@
     "@ckeditor/ckeditor5-build-inline": "^37.1.0",
     "chart.js": "^4.3.0",
     "ngx-chartjs": "^0.0.1",
+    "ngx-pagination": "^6.0.3",
     "quill": "^1.3.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
