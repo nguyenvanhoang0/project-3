@@ -101,7 +101,7 @@
 
 .box__price {
     display: inline-flex;
-    color: var(--yellow-color);
+    color: var(--pink-color);
     font-size: 1.8rem;
 }
 
@@ -157,7 +157,7 @@
 .box__cart-item__price {
     font-weight: 600;
     font-size: 2.6rem;
-    color: var(--yellow-color);
+    color: var(--pink-color);
 }
 
 .box__cart-item {
@@ -174,10 +174,17 @@
 
 
 .cart__button {
-    background-color: var(--yellow-color);
+    background-color: var(--pink-color);
     color: var(--white-color);
     width: calc(100%);
-    border-color: 1px var(--yellow-color);
+    border-color: 1px var(--pink-color);
+    font-weight: bold;
+}
+
+.cart__button:hover {
+    cursor: pointer;
+    background-color: #be2f38;
+    font-weight: bold;
 }
 
 .cart__button {
@@ -187,7 +194,15 @@
 .cart__button-checkout {
     height: 52px;
     width: calc(100%);
-    color: var(--yellow-color);
-    border: 2px solid var(--yellow-color);
+    font-weight: bold;
+    color: var(--pink-color);
+    border: 2px solid var(--pink-color);
     margin-top: 13px;
+}
+
+
+.cart__button-checkout:hover {
+    background-color: var(--pink-color);
+    color: var(--white-color);
+    font-weight: bold;
 }
