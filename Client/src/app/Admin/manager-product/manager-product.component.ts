@@ -93,7 +93,7 @@ export class ManagerProductComponent implements OnInit, OnChanges {
       this.ShowProductService.searchProducts(this.searchKeyword, this.minPrice, this.maxPrice).subscribe(
         (response: Product[]) => {
           this.products = response;
-          this.filteredProducts = response;
+          this.filteredProducts = response; 
         },
         (error) => {
           console.log(error);

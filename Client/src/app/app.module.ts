@@ -50,6 +50,8 @@ import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
+import { ManagerUserComponent } from './Admin/manager-user/manager-user.component';
+import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -93,7 +95,9 @@ import { SignupComponent } from './account/signup/signup.component';
     UpdateGiftComponent,
     UpdateDiscountComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ManagerUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

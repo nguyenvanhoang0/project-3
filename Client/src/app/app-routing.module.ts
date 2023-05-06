@@ -18,12 +18,14 @@ import { ManagerBrandComponent } from './Admin/manager-brand/manager-brand.compo
 import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue.component';
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
+import { ManagerUserComponent } from './Admin/manager-user/manager-user.component';
 import { UpdateProductComponent } from './Admin/update-product/update-product.component';
 import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
 import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
 import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 
 import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
+import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
 
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
@@ -61,6 +63,7 @@ const routes: Routes = [
       { path: 'ManagerRevenue', component: ManagerRevenueComponent },
       { path: 'ManagerNews', component: ManagerNewsComponent },
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
+      { path: 'ManagerUser', component: ManagerUserComponent },
       
       { path: 'ManagerProduct/UpdateProduct/:id', component: UpdateProductComponent },
       { path: 'UpdateBrand', component: UpdateBrandComponent },
@@ -68,6 +71,7 @@ const routes: Routes = [
       { path: 'UpdateGift', component: UpdateGiftComponent },
 
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
+      { path: 'ManagerUser/UserDetail/:id', component: UserDetailComponent },
       
       
       { path: 'Dashboard', component: DashboardComponent }
