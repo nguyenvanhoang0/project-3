@@ -52,6 +52,7 @@ import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
 import { ManagerUserComponent } from './Admin/manager-user/manager-user.component';
 import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
+import { NewsDetailComponent } from './Admin/news-detail/news-detail.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
     LoginComponent,
     SignupComponent,
     ManagerUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    NewsDetailComponent
   ],
   imports: [
     BrowserModule,

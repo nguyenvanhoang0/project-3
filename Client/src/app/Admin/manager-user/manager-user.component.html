@@ -23,8 +23,8 @@
             <tbody *ngIf="users">
                 <tr *ngFor="let user of users | paginate: { itemsPerPage: 8, currentPage: currentPage }">
                     <td>{{ user.id }}</td>
-                    <td ><span ><p routerLink="UserDetail/{{user.id}}">{{ user.name }}</p> </span></td>
-                    <td ><span ><p routerLink="UserDetail/{{user.id}}">{{ user.email }}</p></span></td>
+                    <td routerLink="UserDetail/{{user.id}}"><span ><p >{{ user.name }}</p> </span></td>
+                    <td routerLink="UserDetail/{{user.id}}"><span ><p >{{ user.email }}</p></span></td>
                     <td><span>{{ user.address.city  }}</span></td>
                 </tr>
 
