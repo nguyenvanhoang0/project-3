@@ -29,6 +29,10 @@
     margin-top: 20px;
 }
 
+table{
+    cursor: pointer;
+}
+
 label p {
     margin-left: 3px;
     color: red;

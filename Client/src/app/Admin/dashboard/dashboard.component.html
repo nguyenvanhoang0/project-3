@@ -43,20 +43,17 @@
 </div>
 
 <div class="Chart ">
-    <p>{{selectedMonth}}</p>
-    <p>{{selectedYear}}</p>
-<ul>
-    <li>
-        <select #yearSelect (change)="onYearSelectChange()" class="dashboard" >
+    
+    <div class="time">
+        <select #yearSelect (change)="onYearSelectChange()" class="dashboard">
             <option *ngFor="let year of yearList">{{year}}</option>
         </select>
-    </li>
-</ul>
-    <ul #monthList (click)="onMonthListClick($event)">
-        <li *ngFor="let month of monthListItems" >{{month}}</li>
-    </ul>
 
-
+        <ul #monthList>
+            <li *ngFor="let month of monthListItems" (click)="onMonthListClick($event)">{{month}}</li>
+        </ul>
+    </div>
+<p class="tille_chart">Graph showing sales and orders  {{selectedMonth}} / {{selectedYear}}</p>
     <canvas id="myChart"></canvas>
 </div>
 

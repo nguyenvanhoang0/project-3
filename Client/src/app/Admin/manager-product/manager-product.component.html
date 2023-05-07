@@ -63,7 +63,7 @@
                     <td>{{ product.id }}</td>
                     <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.title }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
                     <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.price }}</p><img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
-                    <td><span>{{ product.rating.rate  }}<img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/add.svg" alt=""></span></td>
+                    <td><span>{{ product.rating.rate  }}<img routerLink="ImportProducts/{{product.id}}"  src="../../../assets/img/svg/add.svg" alt=""></span></td>
                 </tr>
 
             </tbody>
@@ -73,7 +73,7 @@
           </div>
     </div>
 
-    <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchKeyword " >
+    <!-- <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchKeyword " >
 <table>
   ...
   <tbody *ngIf="filteredProducts && filteredProducts.length > 0">
@@ -86,7 +86,7 @@
       <td colspan="4" class="text-center">Không tìm thấy sản phẩm</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 </div>

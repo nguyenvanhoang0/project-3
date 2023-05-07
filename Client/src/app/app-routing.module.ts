@@ -28,6 +28,7 @@ import { ProductDetailComponent } from './Admin/product-detail/product-detail.co
 import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
 
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import { ImportProductsComponent } from './Admin/import-products/import-products.component';
 
 import { IndexComponent } from './User/index/index.component';
 import { ProductComponent } from './User/product/product.component';
@@ -72,7 +73,8 @@ const routes: Routes = [
 
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
       { path: 'ManagerUser/UserDetail/:id', component: UserDetailComponent },
-      
+      { path: 'ManagerProduct/ImportProducts/:id', component: ImportProductsComponent },
+
       
       { path: 'Dashboard', component: DashboardComponent }
     ]
