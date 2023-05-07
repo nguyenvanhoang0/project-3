@@ -7,14 +7,55 @@
         <table class="">
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th>
+                        <div class="flex">
+                            STT
+                            <div class="hover">
+                                <ul class="">
+                                    <li (click)="resetSort()">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
                     <th>name</th>
-                    <th>price</th>
-                    <th>quantity</th>
+                    <th>
+                        <div class="flex">
+                            price
+
+                            <div class="hover">
+                                <ul >
+                                    <li (click)="sortByPrice('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByPrice('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="flex">
+                            quantity
+
+                            <div class="hover">
+                                <ul >
+                                    <li (click)="sortByPrice('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByPrice('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody *ngIf="products">
-                <tr *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: currentPage }">
+                <tr *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: currentPage }">
                     <td>{{ product.id }}</td>
                     <td routerLink="ImportProducts/{{product.id}}">{{ product.title }}</td>
                     <td routerLink="ImportProducts/{{product.id}}">{{ product.price }}</td>
@@ -28,11 +69,15 @@
         </div>
     </div>
 
-    <div class="information">
-        <h2>Add product</h2>
-        <div class="list add">
-            <p> quantity {{ product?.rating?.rate }}</p>
-            <input type="number">
-        </div>
-    </div>
+
 </div>
+
+<form class="information">
+    <h2>Add product</h2>
+    <div class="list add">
+        <p> quantity :{{ product?.quantity }}</p>
+        <input type="number" id="quantityInput" name="quantityInput" [(ngModel)]="quantityInput">
+    </div>
+    <button class="bt_add" type="submit" (click)="updateQuantity()">Add product</button>
+
+</form>
