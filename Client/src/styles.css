@@ -34,7 +34,7 @@ label p {
     color: red;
 }
 
-.add {
+.add , .dashboard {
     box-sizing: content-box;
     font-size: 13px;
 }

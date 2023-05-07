@@ -8,7 +8,7 @@ import { News } from 'src/app/Service/news/news';
 })
 export class ManagerNewsComponent {
   news: News[] | null = null;
-  // filteredNews: News[] | null = null;
+  filteredNews: News[] | null = null;
   currentPage = 1
 
   isIndexClass = false;
@@ -21,3 +21,4 @@ export class ManagerNewsComponent {
       });
   }
 }
+

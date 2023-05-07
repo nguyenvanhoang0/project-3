@@ -1,11 +1,19 @@
 export interface News {
-    id: string;
-  name: string;
-    author: string;
+    status: string;
+  totalResults: number;
+  articles: {
+    source: {
+      id: string | null;
+      name: string;
+    };
+    author: string | null;
     title: string;
-    description: string;
+    description: string | null;
     url: string;
-    urlToImage: string;
-    publishedAt: Date;
-    content: string;
-  }
+    urlToImage: string | null;
+    publishedAt: string;
+    content: string | null;
+  };
+   
+}
+  

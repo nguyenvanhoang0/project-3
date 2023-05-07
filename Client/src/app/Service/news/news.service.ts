@@ -7,7 +7,7 @@ import { News } from './news';
 })
 export class NewsService {
   // https://newsapi.org/
-  private apiUrl = 'https://newsapi.org';
+  private apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=736b9291bcb6476283d47c397c2a5bdc';
 
   constructor(private http: HttpClient) { }
 
