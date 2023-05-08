@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\project\\Jewelry\\Project3\\Project3.csproj": {}
+    "C:\\Users\\Admin\\source\\repos\\Project3\\Project3\\Project3.csproj": {}
   },
   "projects": {
-    "C:\\project\\Jewelry\\Project3\\Project3.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\Project3\\Project3\\Project3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\project\\Jewelry\\Project3\\Project3.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Project3\\Project3\\Project3.csproj",
         "projectName": "Project3",
-        "projectPath": "C:\\project\\Jewelry\\Project3\\Project3.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\project\\Jewelry\\Project3\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\Project3\\Project3\\Project3.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\Project3\\Project3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,6 +51,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -106,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
