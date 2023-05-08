@@ -8,9 +8,9 @@ namespace Project3.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategory _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryController(ICategory categoryRepository)
+        public CategoryController(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }

@@ -1,45 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Project3.Models;
+using Project3.Repositories;
 
 namespace Project3.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class NewsController : ControllerBase
     {
-        private readonly DatabaseContext _context;
-
-        public NewsController(DatabaseContext context)
+        private readonly INewsRepository _newsRepository;
+        public NewsController(INewsRepository newsRepository)
         {
-            _context = context;
+            _newsRepository = newsRepository;
         }
 
-        // GET: api/News
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<News>>> GetNews()
+        public async Task<ActionResult<List<News>>> GetAllNews()
         {
-          if (_context.News == null)
-          {
-              return NotFound();
-          }
-            return await _context.News.ToListAsync();
+            return await _newsRepository.GetAllNewsAsync();
         }
 
-        // GET: api/News/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<News>> GetNews(int id)
+        public async Task<ActionResult<News>> GetNewsById(int id)
         {
-          if (_context.News == null)
-          {
-              return NotFound();
-          }
-            var news = await _context.News.FindAsync(id);
+            var news = await _newsRepository.GetNewsByIdAsync(id);
 
             if (news == null)
             {
@@ -49,75 +36,43 @@ namespace Project3.Controllers
             return news;
         }
 
-        // PUT: api/News/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutNews(int id, News news)
+        [HttpPost]
+        public async Task<IActionResult> CreateNews(News news)
         {
-            if (id != news.Id)
+            await _newsRepository.AddNewsAsync(news);
+
+            return CreatedAtAction(nameof(GetNewsById), new { id = news.Id }, news);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateNews(int id, News news)
+        {
+            var existingNews = await _newsRepository.GetNewsByIdAsync(id);
+
+            if (existingNews == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(news).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!NewsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _newsRepository.UpdateNewsAsync(id, news);
 
             return NoContent();
         }
 
-        // POST: api/News
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<News>> PostNews(News news)
-        {
-          if (_context.News == null)
-          {
-              return Problem("Entity set 'DatabaseContext.News'  is null.");
-          }
-            _context.News.Add(news);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetNews", new { id = news.Id }, news);
-        }
-
-        // DELETE: api/News/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteNews(int id)
         {
-            if (_context.News == null)
-            {
-                return NotFound();
-            }
-            var news = await _context.News.FindAsync(id);
-            if (news == null)
+            var existingNews = await _newsRepository.GetNewsByIdAsync(id);
+
+            if (existingNews == null)
             {
                 return NotFound();
             }
 
-            _context.News.Remove(news);
-            await _context.SaveChangesAsync();
+            await _newsRepository.DeleteNewsAsync(id);
 
             return NoContent();
         }
-
-        private bool NewsExists(int id)
-        {
-            return (_context.News?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
     }
 }
+

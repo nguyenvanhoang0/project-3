@@ -11,9 +11,9 @@ namespace Project3.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProduct _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public ProductsController(IProduct productRepository)
+        public ProductsController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }

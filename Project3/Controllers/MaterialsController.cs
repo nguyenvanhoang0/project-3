@@ -11,9 +11,9 @@ namespace Project3.Controllers
     [Route("api/[controller]")]
     public class MaterialsController : ControllerBase
     {
-        private readonly IMaterial _repository;
+        private readonly IMaterialRepository _repository;
 
-        public MaterialsController(IMaterial repository)
+        public MaterialsController(IMaterialRepository repository)
         {
             _repository = repository;
         }

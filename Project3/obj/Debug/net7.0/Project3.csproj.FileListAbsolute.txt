@@ -311,8 +311,10 @@ C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.DiaSymReader.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.DotNet.Scaffolding.Shared.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -332,6 +334,7 @@ C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGene
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\project\Jewelry\Project3\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\NuGet.Common.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\NuGet.Configuration.dll
@@ -345,6 +348,7 @@ C:\project\Jewelry\Project3\bin\Debug\net7.0\NuGet.Versioning.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\project\Jewelry\Project3\bin\Debug\net7.0\System.CodeDom.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\System.Composition.AttributedModel.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\System.Composition.Convention.dll
 C:\project\Jewelry\Project3\bin\Debug\net7.0\System.Composition.Hosting.dll
@@ -548,7 +552,3 @@ C:\project\Jewelry\Project3\obj\Debug\net7.0\refint\Project3.dll
 C:\project\Jewelry\Project3\obj\Debug\net7.0\Project3.pdb
 C:\project\Jewelry\Project3\obj\Debug\net7.0\Project3.genruntimeconfig.cache
 C:\project\Jewelry\Project3\obj\Debug\net7.0\ref\Project3.dll
-C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\project\Jewelry\Project3\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\project\Jewelry\Project3\bin\Debug\net7.0\Mono.TextTemplating.dll
-C:\project\Jewelry\Project3\bin\Debug\net7.0\System.CodeDom.dll

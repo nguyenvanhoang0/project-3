@@ -7,7 +7,7 @@ using Project3.Models;
 
 namespace Project3.Repositories
 {
-    public class MaterialRepository : IMaterial
+    public class MaterialRepository : IMaterialRepository
     {
         private readonly DatabaseContext _context;
 

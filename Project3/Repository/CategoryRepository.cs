@@ -4,7 +4,7 @@ using Project3.Models;
 
 namespace Project3.Repository
 {
-    public class CategoryRepository:ICategory
+    public class CategoryRepository:ICategoryRepository
     {
         private readonly DatabaseContext _dbContext;
 

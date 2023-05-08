@@ -3,7 +3,7 @@ using Project3.Models;
 
 namespace Project3.Interface
 {
-    public interface IMaterial
+    public interface IMaterialRepository
     {
         Task<IEnumerable<Material>> GetAllMaterialsAsync();
         Task<Material> GetMaterialByIdAsync(int id);

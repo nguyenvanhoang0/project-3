@@ -2,7 +2,7 @@
 
 namespace Project3.Interface
 {
-    public interface IOrderDetail
+    public interface IOrderDetailRepository
     {
         Task<IEnumerable<OrderDetail>> GetOrderDetailsAsync(int orderId);
         Task<OrderDetail> GetOrderDetailByIdAsync(int id);

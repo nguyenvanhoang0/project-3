@@ -1,7 +1,7 @@
 ﻿using Project3.Models;
 namespace Project3.Interface;
 
-public interface ICategory
+public interface ICategoryRepository
 {
     Task<ICollection<Category>> GetAllAsync();
     Task<Category> GetByIdAsync(int id);

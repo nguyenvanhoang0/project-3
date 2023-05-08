@@ -17,8 +17,8 @@ namespace Project3.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly Interface.IAccount _accountRepository;
-        public AccountsController(Interface.IAccount accountRepository)
+        private readonly Interface.IAccountRepository _accountRepository;
+        public AccountsController(Interface.IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository;
         }

@@ -2,7 +2,7 @@
 
 namespace Project3.Interface
 {
-    public interface IProduct
+    public interface IProductRepository
     {
             Task<List<Product>> GetAllProductsAsync();
             Task<Product> GetProductByIdAsync(int id);

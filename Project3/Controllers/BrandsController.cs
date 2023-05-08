@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Project3.Models;
+using Project3.Repositories;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Project3.Controllers
 {
@@ -13,111 +10,50 @@ namespace Project3.Controllers
     [ApiController]
     public class BrandsController : ControllerBase
     {
-        private readonly DatabaseContext _context;
+        private readonly IBrandRepository _repository;
 
-        public BrandsController(DatabaseContext context)
+        public BrandsController(IBrandRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
-        // GET: api/Brands
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Brand>>> GetBrands()
+        public async Task<IEnumerable<Brand>> GetAllAsync()
         {
-          if (_context.Brands == null)
-          {
-              return NotFound();
-          }
-            return await _context.Brands.ToListAsync();
+            return await _repository.GetAllAsync();
         }
 
-        // GET: api/Brands/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Brand>> GetBrand(int id)
+        public async Task<Brand> GetByIdAsync(int id)
         {
-          if (_context.Brands == null)
-          {
-              return NotFound();
-          }
-            var brand = await _context.Brands.FindAsync(id);
-
-            if (brand == null)
-            {
-                return NotFound();
-            }
-
-            return brand;
+            return await _repository.GetByIdAsync(id);
         }
 
-        // PUT: api/Brands/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBrand(int id, Brand brand)
-        {
-            if (id != brand.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(brand).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BrandExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Brands
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Brand>> PostBrand(Brand brand)
+        public async Task<Brand> CreateAsync(Brand brand)
         {
-          if (_context.Brands == null)
-          {
-              return Problem("Entity set 'DatabaseContext.Brands'  is null.");
-          }
-            _context.Brands.Add(brand);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
+            return await _repository.CreateAsync(brand);
         }
 
-        // DELETE: api/Brands/5
+        [HttpPut("{id}")]
+        public async Task UpdateAsync(int id, Brand brand)
+        {
+            var existingBrand = await _repository.GetByIdAsync(id);
+            if (existingBrand != null)
+            {
+                brand.Id = id;
+                await _repository.UpdateAsync(brand);
+            }
+        }
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBrand(int id)
+        public async Task DeleteAsync(int id)
         {
-            if (_context.Brands == null)
+            var existingBrand = await _repository.GetByIdAsync(id);
+            if (existingBrand != null)
             {
-                return NotFound();
+                await _repository.DeleteAsync(existingBrand);
             }
-            var brand = await _context.Brands.FindAsync(id);
-            if (brand == null)
-            {
-                return NotFound();
-            }
-
-            _context.Brands.Remove(brand);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool BrandExists(int id)
-        {
-            return (_context.Brands?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

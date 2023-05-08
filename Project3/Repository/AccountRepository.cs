@@ -12,7 +12,7 @@ using System.Text;
 namespace Project3.Repository
 {
     
-    public class AccountRepository : IAccount
+    public class AccountRepository : IAccountRepository
     {    
         private readonly DatabaseContext _dbContext;
         public AccountRepository(DatabaseContext context)

@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace Project3.Interface
 {
-    public interface IAccount
+    public interface IAccountRepository
     {
         Task<Account> GetByIdAsync(int id);
         Task<IEnumerable<Account>> GetAllAsync();

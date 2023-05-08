@@ -2,7 +2,7 @@
 
 namespace Project3.Interface
 {
-    public interface IOrder
+    public interface IOrderRepository
     {
         Task<IEnumerable<Order>> GetAllOrdersAsync();
         Task<Order> GetOrderByIdAsync(int id);

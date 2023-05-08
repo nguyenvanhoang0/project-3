@@ -85,6 +85,10 @@ namespace Project3.Models {
                     .HasDefaultValueSql("(getdate())")
                     .HasColumnType("datetime")
                     .HasColumnName("updated_at");
+                entity.Property(e => e.Role)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("role");
             });
 
             modelBuilder.Entity<Brand>(entity =>
