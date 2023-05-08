@@ -1,1 +1,46 @@
-<p>manager-news works!</p>
+<div class="information">
+    <h2>Product List</h2>
+
+    <ul class="tool">
+
+
+        <li>All</li>
+
+
+    </ul>
+    <div class="information ">
+
+
+        <table class="">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Gmail</th>
+                    <th>author</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="news">
+                <tr *ngFor="let newss of news | paginate: { itemsPerPage: 8, currentPage: currentPage }">
+                    <td>{{ newss.articles.source.id }}</td>
+                    <td routerLink="UserDetail/{{newss.articles.source.id}}"><span>
+                            <p>{{ newss.articles.source.name }}</p>
+                        </span></td>
+                    <td routerLink="UserDetail/{{newss.articles.source.id}}"><span>
+                            <p>{{ newss.articles.title }}</p>
+                        </span></td>
+                    <td><span>{{ newss.articles.author }}</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+    </div>
+
+
+
+
+</div>
+

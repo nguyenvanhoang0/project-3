@@ -1,0 +1,42 @@
+<div class="information">
+    <h2>Product List</h2>
+
+    <ul class="tool">
+       
+       
+        <li>All</li>
+        
+
+    </ul>
+    <div class="information ">
+        
+
+        <table class="" >
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Gmail</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="users">
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: 8, currentPage: currentPage }">
+                    <td>{{ user.id }}</td>
+                    <td routerLink="UserDetail/{{user.id}}"><span ><p >{{ user.name }}</p> </span></td>
+                    <td routerLink="UserDetail/{{user.id}}"><span ><p >{{ user.email }}</p></span></td>
+                    <td><span>{{ user.address.city  }}</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
+    </div>
+
+    
+
+
+</div>
+

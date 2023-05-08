@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'NTR', sans-serif;
+    box-sizing: inherit;
 }
 
 @font-face {
@@ -28,17 +29,22 @@
     margin-top: 20px;
 }
 
+table{
+    cursor: pointer;
+}
+
 label p {
     margin-left: 3px;
     color: red;
 }
 
-.add {
+.add , .dashboard {
     box-sizing: content-box;
     font-size: 13px;
 }
 
-.add input , select{
+.add input,
+select {
     border: 1px #ccced1 solid;
     border-radius: 5px;
     padding: 5px 10px;
@@ -47,6 +53,54 @@ label p {
     background-color: transparent;
     outline: none;
 }
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .ngx-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .ngx-pagination li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+
+    border-radius: 3px;
+}
+
+.pagination .ngx-pagination li.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination .ngx-pagination li.disabled {
+    opacity: 0.5;
+}
+
+.pagination .ngx-pagination li:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination {
+    font-size: 135%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+/* -------------------------------- */
 
 :root {
     --white-color: #fff;
@@ -65,9 +119,7 @@ body {
     font-family: "Helvetica,Arial,sans-serif", sans-serif;
 }
 
-* {
-    box-sizing: inherit;
-}
+
 
 
 html {

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,10 @@ import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
+import { ManagerUserComponent } from './Admin/manager-user/manager-user.component';
+import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
+import { NewsDetailComponent } from './Admin/news-detail/news-detail.component';
+import { ImportProductsComponent } from './Admin/import-products/import-products.component';
 
 
 @NgModule({
@@ -92,7 +97,11 @@ import { SignupComponent } from './account/signup/signup.component';
     UpdateGiftComponent,
     UpdateDiscountComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ManagerUserComponent,
+    UserDetailComponent,
+    NewsDetailComponent,
+    ImportProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +109,8 @@ import { SignupComponent } from './account/signup/signup.component';
     FormsModule,
     HttpClientModule,
     CKEditorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
 
