@@ -2,12 +2,11 @@
     <h2>Product List</h2>
 
     <ul class="tool">
-        <li>Brand
+        <li *ngIf="Brands">Brand
             <div class="hover">
-                <ul>
-                    <li (click)="sortByPrice('asc')"><img src="../../../assets/img/svg/chart_down.svg" alt="">ascending</li>
-                    <li (click)="sortByPrice('desc')"><img src="../../../assets/img/svg/chart.svg" alt="">decrease</li>
-                    <li (click)="resetSort()"><img src="../../../assets/img/svg/hash.svg" alt="">default</li>
+                <ul class="brand">
+                    <li *ngFor="let Brand of Brands ">{{Brand.name}}</li>
+                    
                 </ul>
             </div>
         </li>
@@ -37,9 +36,9 @@
     <div class="information ">
         <div *ngIf="products" class="products flex" [ngClass]="{ 'index': isIndexClass }">
             <div *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: currentPage }" class="">
-                <div class="img_product"><img [src]="product.imageUrl" alt="{{ product.title }}" width="200"></div>
+                <div class="img_product"><img [src]="product.imageUrl" alt="{{ product.name }}" width="200"></div>
 
-                <h3>{{ product.title }}</h3>
+                <h3>{{ product.name }}</h3>
                 <p>Price: {{ product.price }}</p>
 
                 <p>Category: {{ product.categoryID }}</p>
@@ -61,7 +60,7 @@
             <tbody *ngIf="products">
                 <tr *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: currentPage }">
                     <td>{{ product.id }}</td>
-                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.title }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
+                    <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.name }}</p> <img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
                     <td ><span ><p routerLink="ProductDetail/{{product.id}}">{{ product.price }}</p><img routerLink="UpdateProduct/{{product.id}}"  src="../../../assets/img/svg/edit.svg" alt=""></span></td>
                     <td><span>{{ product.quantity  }}<img routerLink="ImportProducts/{{product.id}}"  src="../../../assets/img/svg/add.svg" alt=""></span></td>
                 </tr>

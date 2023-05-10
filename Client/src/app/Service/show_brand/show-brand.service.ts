@@ -1,23 +1,28 @@
-// import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { Brand } from './show-brand.interface';
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ShowBrandService {
-//   apiUrl = 'https://api.aviationstack.com/v1/airlines';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Brand } from './show-brand.interface';
+@Injectable({
+  providedIn: 'root'
+})
+export class ShowBrandService {
+  apiUrl = 'https://localhost:7051/api/Brands';
 
-//   constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-//   getAllProducts(): Observable<Brand[]> {
-//     return this.http.get<Brand[]>(this.apiUrl);
-//   }
+  getAllBrand(): Observable<Brand[]> {
+    return this.http.get<Brand[]>(this.apiUrl);
+  }
 
+  getBrandById(id: number): Observable<Brand> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Brand>(url);
+  }
 
-//   getProductById(id: number): Observable<Brand> {
-//     const url = `${this.apiUrl}/${id}`;
-//     return this.http.get<Brand>(url);
-//   }
-// }
+  createBrand(Brand: Brand): Observable<Brand> {
+    const url = `${this.apiUrl}/${Brand.id}`;
+    return this.http.post<Brand>(url, Brand);
+  }
+
+}

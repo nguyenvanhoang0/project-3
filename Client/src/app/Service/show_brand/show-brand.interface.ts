@@ -1,7 +1,11 @@
-export interface Airline {
-    airline_name: string;
-    iata_code: string;
-    icao_code: string;
-    country_iso2: string;
-    active: boolean;
+export interface Brand {
+  id: number;
+  name: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  // active: boolean;
+  products:{}
   }
+
+  

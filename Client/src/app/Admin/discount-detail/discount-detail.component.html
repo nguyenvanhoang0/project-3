@@ -1,0 +1,124 @@
+<div class="information">
+    <h2>Details Discount</h2>
+    <table class="list">
+
+
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>{{ Promotions?.id }}</td>
+            </tr>
+            <tr>
+                <td>Name Discount</td>
+                <td>{{ Promotions?.name }}</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ Promotions?.description }}</td>
+            </tr>
+            <tr>
+                <td>startDate</td>
+                <td>{{ Promotions?.startDate }}</td>
+            </tr>
+            <tr>
+                <td>endDate</td>
+                <td>{{ Promotions?.endDate }}</td>
+            </tr>
+            <tr>
+                <td>createdAt</td>
+                <td>{{ Promotions?.createdAt }}</td>
+            </tr>
+            <tr>
+                <td>updatedAt</td>
+                <td>{{ Promotions?.updatedAt }}</td>
+            </tr>
+            <tr>
+                <td>products</td>
+                <td>{{ Promotions?.products }}</td>
+            </tr>
+            <tr>
+                <td>productsNavigation</td>
+                <td>{{ Promotions?.productsNavigation }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="flex">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<div class="information">
+    <h2>Discount List</h2>
+    <div class="list ">
+        <table class="">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="flex">
+                            STT
+                            <div class="hover">
+                                <ul class="">
+                                    <li (click)="resetSort()">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>name</th>
+                    <th>Applicable product number</th>
+                    <th>
+                        <div class="flex">
+                            Discount
+
+                            <div class="hover">
+                                <ul>
+                                    <li (click)="sortByDiscount('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByDiscount('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="flex">
+                            Start day
+
+                            <div class="hover">
+                                <ul>
+                                    <li (click)="sortBystartDate('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortBystartDate('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>End day</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="promotions">
+                <tr *ngFor="let Promotions of promotions | paginate: { itemsPerPage: 10, currentPage: currentPage } ">
+                    <td routerLink="/admin/ManagerDiscount/DiscountDetail/{{Promotions.id}}">{{ Promotions.id }}</td>
+                    <td routerLink="{{Promotions.id}}">{{ Promotions.name }}</td>
+                    <td routerLink="{{Promotions.id}}">{{Promotions.products}}</td>
+                    <td routerLink="{{Promotions.id}}">{{ Promotions.discount }}</td>
+                    <td routerLink="{{Promotions.id}}">{{ Promotions.startDate }}</td>
+                    <td routerLink="{{Promotions.id}}">{{ Promotions.endDate }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

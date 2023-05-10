@@ -54,6 +54,8 @@ import { ManagerUserComponent } from './Admin/manager-user/manager-user.componen
 import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
 import { NewsDetailComponent } from './Admin/news-detail/news-detail.component';
 import { ImportProductsComponent } from './Admin/import-products/import-products.component';
+import { ManagerCategoryComponent } from './Admin/manager-category/manager-category.component';
+import { DiscountDetailComponent } from './Admin/discount-detail/discount-detail.component';
 
 
 @NgModule({
@@ -101,7 +103,9 @@ import { ImportProductsComponent } from './Admin/import-products/import-products
     ManagerUserComponent,
     UserDetailComponent,
     NewsDetailComponent,
-    ImportProductsComponent
+    ImportProductsComponent,
+    ManagerCategoryComponent,
+    DiscountDetailComponent
   ],
   imports: [
     BrowserModule,

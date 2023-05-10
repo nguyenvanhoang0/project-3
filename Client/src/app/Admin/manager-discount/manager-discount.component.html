@@ -1,1 +1,87 @@
-<p>manager-discount works!</p>
+<div class="information">
+    <h2>Discount List</h2>
+    <div class="list ">
+        <table class="">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="flex">
+                            STT
+                            <div class="hover">
+                                <ul class="">
+                                    <li (click)="resetSort()">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>name</th>
+                    <th>Applicable product number</th>
+                    <th>
+                        <div class="flex">
+                            Discount
+
+                            <div class="hover">
+                                <ul >
+                                    <li (click)="sortByDiscount('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByDiscount('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="flex">
+                            Start day
+
+                            <div class="hover">
+                                <ul >
+                                    <li (click)="sortBystartDate('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortBystartDate('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>End day</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="promotions">
+                <tr *ngFor="let Promotions of promotions | paginate: { itemsPerPage: 10, currentPage: currentPage }">
+                    <td>{{ Promotions.id }}</td>
+                    <td routerLink="DiscountDetail/{{Promotions.id}}">{{ Promotions.name }}</td>
+                    <td>{{Promotions.products}}</td>
+                    <td routerLink="DiscountDetail/{{Promotions.id}}">{{ Promotions.discount }}</td>
+                    <td>{{ Promotions.startDate }}</td>
+                    <td>{{ Promotions.endDate }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+<!-- <div class="information">
+    <h2>Details Discount</h2>
+    <p>ID : {{ Promotions?.id }}</p>
+    <p>{{ Promotions?.name }}</p>
+    <p>{{ Promotions?.discount }}</p>
+    <p>{{ Promotions?.description }}</p>
+    <p>{{ Promotions?.startDate }}</p>
+    <p>{{ Promotions?.endDate }}</p>
+    <p>{{ Promotions?.createdAt }}</p>
+    <p>{{ Promotions?.updatedAt }}</p>
+    <p>{{ Promotions?.products }}</p>
+    <p>{{ Promotions?.productsNavigation }}</p>
+
+</div> -->
+

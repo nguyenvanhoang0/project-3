@@ -19,6 +19,7 @@ import { ManagerRevenueComponent } from './Admin/manager-revenue/manager-revenue
 import { ManagerNewsComponent } from './Admin/manager-news/manager-news.component';
 import { ManagerDiscountComponent } from './Admin/manager-discount/manager-discount.component';
 import { ManagerUserComponent } from './Admin/manager-user/manager-user.component';
+import { ManagerCategoryComponent } from './Admin/manager-category/manager-category.component';
 import { UpdateProductComponent } from './Admin/update-product/update-product.component';
 import { UpdateBrandComponent } from './Admin/update-brand/update-brand.component';
 import { UpdateDiscountComponent } from './Admin/update-discount/update-discount.component';
@@ -26,6 +27,7 @@ import { UpdateGiftComponent } from './Admin/update-gift/update-gift.component';
 
 import { ProductDetailComponent } from './Admin/product-detail/product-detail.component';
 import { UserDetailComponent } from './Admin/user-detail/user-detail.component';
+import { DiscountDetailComponent } from './Admin/discount-detail/discount-detail.component';
 
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { ImportProductsComponent } from './Admin/import-products/import-products.component';
@@ -65,6 +67,7 @@ const routes: Routes = [
       { path: 'ManagerNews', component: ManagerNewsComponent },
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
       { path: 'ManagerUser', component: ManagerUserComponent },
+      { path: 'ManagerCategory', component: ManagerCategoryComponent },
       
       { path: 'ManagerProduct/UpdateProduct/:id', component: UpdateProductComponent },
       { path: 'UpdateBrand', component: UpdateBrandComponent },
@@ -74,6 +77,7 @@ const routes: Routes = [
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },
       { path: 'ManagerUser/UserDetail/:id', component: UserDetailComponent },
       { path: 'ManagerProduct/ImportProducts/:id', component: ImportProductsComponent },
+      { path: 'ManagerDiscount/DiscountDetail/:id', component: DiscountDetailComponent },
 
       
       { path: 'Dashboard', component: DashboardComponent }

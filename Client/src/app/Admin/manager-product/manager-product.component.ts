@@ -2,6 +2,8 @@ import { Component, OnInit ,SimpleChanges , OnChanges ,Input} from '@angular/cor
 import { HttpClient } from '@angular/common/http';
 import { ShowProductService } from 'src/app/Service/show-product/show-product.service';
 import { Product } from 'src/app/Service/show-product/show-product.interface';
+import { ShowBrandService } from 'src/app/Service/show_brand/show-brand.service';
+import { Brand } from 'src/app/Service/show_brand/show-brand.interface';
 
 export interface ManagerProductComponent {
   [key: string]: any;
@@ -16,6 +18,7 @@ export interface ManagerProductComponent {
 
 export class ManagerProductComponent implements OnInit, OnChanges {
   products: Product[] | null = null;
+  Brands: Brand[] | null = null;
   filteredProducts: Product[] | null = null;
 
   sortType: string = '';
@@ -32,11 +35,19 @@ export class ManagerProductComponent implements OnInit, OnChanges {
   isIndexClass = false;
 
 
-  constructor(private ShowProductService: ShowProductService) {
+  constructor(
+    private ShowProductService: ShowProductService,
+    private ShowBrandService :ShowBrandService ,
+    ) {
     this.ShowProductService.getAllProducts()
       .subscribe((response: Product[]) => {
         this.products = response;
         this.filteredProducts = [];
+      });
+
+      this.ShowBrandService.getAllBrand()
+      .subscribe((response: Brand[]) => {
+        this.Brands = response;
       });
   }
 
@@ -84,7 +95,7 @@ export class ManagerProductComponent implements OnInit, OnChanges {
 
     const keyword = this.searchKeyword.toLowerCase();
     this.filteredProducts = this.products.filter((product) =>
-      product.title.toLowerCase().includes(keyword)
+      product.name.toLowerCase().includes(keyword)
     );
   }
 

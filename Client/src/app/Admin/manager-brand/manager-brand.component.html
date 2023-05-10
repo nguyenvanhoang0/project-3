@@ -1,1 +1,73 @@
-<p>manager-brand works!</p>
+<div class="information">
+    <h2>Brands List</h2>
+    <div class="list ">
+        <table class="">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="flex">
+                            STT
+                            <div class="hover">
+                                <ul class="">
+                                    <li (click)="resetSort()">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                    <th>name</th>
+                    <th>the number of products</th>
+                    <th>
+                        <div class="flex">
+                            Date created
+
+                            <!-- <div class="hover">
+                                <ul >
+                                    <li (click)="sortByPrice('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByPrice('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </th>
+                    <th>
+                        <div class="flex">
+                            Last edit
+
+                            <!-- <div class="hover">
+                                <ul >
+                                    <li (click)="sortByPrice('asc')">
+                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
+                                    </li>
+                                    <li (click)="sortByPrice('desc')">
+                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngIf="Brands">
+                <tr *ngFor="let Brand of Brands | paginate: { itemsPerPage: 10, currentPage: currentPage }">
+                    <td>{{ Brand.id }}</td>
+                    <td routerLink="ImportProducts/{{Brand.id}}">{{ Brand.name }}</td>
+                    <td></td>
+                    <td routerLink="ImportProducts/{{Brand.id}}">{{ Brand.createdAt }}</td>
+                    <td>{{ Brand.updatedAt }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+    </div>
+
+
+</div>
+

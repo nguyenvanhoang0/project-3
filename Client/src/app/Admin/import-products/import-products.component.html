@@ -57,7 +57,7 @@
             <tbody *ngIf="products">
                 <tr *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: currentPage }">
                     <td>{{ product.id }}</td>
-                    <td routerLink="ImportProducts/{{product.id}}">{{ product.title }}</td>
+                    <td routerLink="ImportProducts/{{product.id}}">{{ product.name }}</td>
                     <td routerLink="ImportProducts/{{product.id}}">{{ product.price }}</td>
                     <td>{{ product.quantity }}</td>
                 </tr>
