@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./hearder-user.component.css']
 })
 export class HearderUserComponent {
-
+  isIndexClass = false;
+  isIndexClass2 = false;
 }

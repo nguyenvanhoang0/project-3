@@ -23,6 +23,7 @@
                     <li class="header-top-navbar__item header-top-navbar__mobile">HOTLINE : 0909029292</li>
                 </ul>
                 <ul class="header-top-list">
+
                     <li class="header-top-navbar__item header-top-navbar-notify">
                         <a href="" class="header-top-icon-link">
                             <img class="header-top-navbar-icon" src="../assets/img/png/facebook.png" alt="">
@@ -315,16 +316,28 @@
                     </li> -->
                 </ul>
             </nav>
-            <div class="header-search">
-                <img class="header-search-icon" src="../assets/img/png/search24.png">
-                <div class="header-has-search">
-                    <input type="search" placeholder="  Tìm kiếm">
-                    <button>
-                        <img class="header-has-search-icon " src="../assets/img/png/search24.png">
-                    </button>
+            <div class="header__search__account">
+                <div class="header-search">
+                    <img class="header-search-icon" src="../assets/img/png/search24.png">
+                    <div class="header-has-search">
+                        <input type="search" placeholder="  Tìm kiếm">
+                        <button>
+                            <img class="header-has-search-icon " src="../assets/img/png/search24.png">
+                        </button>
+                    </div>
+                </div>
+                <div class="header__account">
+                    <i class="fa-regular fa-user header__account-icon"></i>
+                    <div class="header-has-account">
+                        <div class="header-has-account-item"> Log in</div>
+                        <div routerLink="signup" class="header-has-account-item account__register">
+                            Register
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
+
 </header>

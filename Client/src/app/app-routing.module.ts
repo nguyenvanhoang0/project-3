@@ -43,10 +43,14 @@ import { ShowProductComponent } from './User/show-product/show-product.component
 import { ShowBranchComponent } from './User/show-branch/show-branch.component';
 import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.component';
 import { ContactComponent } from './User/contact/contact.component';
+import { LoginComponent } from './account/login/login.component';
+import { SignupComponent } from './account/signup/signup.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/home', pathMatch: 'full' },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Signup', component: SignupComponent },
   // { path: 'login', component: LoginComponent },
   {
     path: 'admin',
