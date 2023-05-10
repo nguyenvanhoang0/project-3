@@ -150,12 +150,7 @@ html {
 }
 
 .modal {
-    /* position: fixed; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /* display: flex; */
+    margin: 94px 0 39px 0;
     animation: fadeIn linear 0.1s;
 }
 
@@ -169,6 +164,7 @@ html {
 }
 
 .modal__body {
+    width: 100%;
     --growth-form: 0.7;
     --growth-to: 1;
     /* padding-top: calc((100%/11));
@@ -202,7 +198,7 @@ html {
 
 .btn.btn--primary {
     color: var(--white-color);
-    background-color: var(--pink-color);
+    background-color: #e14b33;
 }
 
 
