@@ -1,3 +1,4 @@
+// import { *asClassicEditor } from '@ckeditor/ckeditor5-build-classic';
 // import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -45,12 +46,19 @@ import { ShowGemstoneComponent } from './User/show-gemstone/show-gemstone.compon
 import { ContactComponent } from './User/contact/contact.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
+import { LayoutAccountComponent } from './layout/layout-account/layout-account.component';
+
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/home', pathMatch: 'full' },
-  { path: 'Login', component: LoginComponent },
-  { path: 'Signup', component: SignupComponent },
+  { 
+    path: 'account', component: SignupComponent,
+    children : [
+      
+    ]
+  },
+
   // { path: 'login', component: LoginComponent },
   {
     path: 'admin',
@@ -101,7 +109,9 @@ const routes: Routes = [
       { path: 'product/ShowProduct/:id', component: ShowProductComponent },
       { path: 'ShowBranch/:id', component: ShowBranchComponent },
       { path: 'ShowGemstone', component: ShowGemstoneComponent },
-      { path: 'Contact', component: ContactComponent }
+      { path: 'Contact', component: ContactComponent },
+      { path: 'Login', component: LoginComponent },
+      { path: 'Signup', component: SignupComponent },
       
     ]
   }

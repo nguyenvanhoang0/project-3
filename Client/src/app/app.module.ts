@@ -56,6 +56,7 @@ import { NewsDetailComponent } from './Admin/news-detail/news-detail.component';
 import { ImportProductsComponent } from './Admin/import-products/import-products.component';
 import { ManagerCategoryComponent } from './Admin/manager-category/manager-category.component';
 import { DiscountDetailComponent } from './Admin/discount-detail/discount-detail.component';
+import { LayoutAccountComponent } from './layout/layout-account/layout-account.component';
 
 
 @NgModule({
@@ -105,7 +106,8 @@ import { DiscountDetailComponent } from './Admin/discount-detail/discount-detail
     NewsDetailComponent,
     ImportProductsComponent,
     ManagerCategoryComponent,
-    DiscountDetailComponent
+    DiscountDetailComponent,
+    LayoutAccountComponent
   ],
   imports: [
     BrowserModule,
