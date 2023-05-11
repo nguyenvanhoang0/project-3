@@ -1,8 +1,40 @@
-<p>product-detail works!</p>
-<h2>{{ product?.name }}</h2>
-<p>Price: {{ product?.price }}</p>
-<p>{{ product?.description }}</p>
-<img [src]="product?.imageUrl" alt="{{ product?.name }}" width="400">
-<p>Category: {{ product?.categoryID }}</p>
 <!-- <p>Rating: {{ product?.rating.rate }}</p> -->
-<p>In stock: {{ product?.quantity }}
+<div class="information">
+    <h2>Details Discount</h2>
+    <img [src]="product?.imageUrl" alt="{{ product?.name }}" width="400">
+
+    <table class="list">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>{{ product?.id }}</td>
+            </tr>
+            <tr>
+                <td>Name Discount</td>
+                <td>{{ product?.name }}</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ product?.description }}</td>
+            </tr>
+            <tr>
+                <td>In stock:</td>
+                <td>{{ product?.quantity }}</td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>{{ product?.price }}</td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>{{ product?.categoryID }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex">
+        <ul>
+            <li>Edit</li>
+            <li>delete</li>
+        </ul>
+    </div>
+</div>

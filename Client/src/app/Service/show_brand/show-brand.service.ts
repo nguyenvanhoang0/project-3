@@ -21,7 +21,7 @@ export class ShowBrandService {
   }
 
   createBrand(Brand: Brand): Observable<Brand> {
-    const url = `${this.apiUrl}/${Brand.id}`;
+    const url = `${this.apiUrl}`;
     return this.http.post<Brand>(url, Brand);
   }
 

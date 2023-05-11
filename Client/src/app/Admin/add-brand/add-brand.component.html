@@ -1,15 +1,15 @@
 <div class="add">
     <!-- <h2>from add product</h2> -->
-    <form class="form flex">
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
             <div>
                 <p>General information</p>
             </div>
             <div>
                 <label for="">Name brand</label><br>
-                <input type="text">
+                <input type="text" id="name" formControlName="name">
             </div>
-            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor></div>
+            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="description" formControlName="description"></ckeditor></div>
 
             <!-- <div class="flex extra">
                 <div>
@@ -35,7 +35,7 @@
                 </div>
 
             </div> -->
-            <button class="bt_add">Add Brand</button>
+            <button class="bt_add"  type="submit">Add Brand</button>
         </div>
         <!-- <div class=" left ">
             

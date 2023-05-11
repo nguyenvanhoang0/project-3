@@ -18,11 +18,6 @@ export class ManagerBrandComponent {
   // @Input() searchKeyword: ManagerProductComponent['searchKeyword'] = '';
 
   // searchKeyword: string = '';
-
-
-  searchText: string = '';
-  minPrice: number = 0 ;
-  maxPrice: number = 999999999;
   currentPage = 1
   isIndexClass = false;
 

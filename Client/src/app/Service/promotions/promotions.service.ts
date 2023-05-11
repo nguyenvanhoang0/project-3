@@ -22,4 +22,9 @@ export class PromotionsService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Promotions>(url);
   }
+
+  createPromotions(Brand: Promotions): Observable<Promotions> {
+    const url = `${this.apiUrl}`;
+    return this.http.post<Promotions>(url, Brand);
+  }
 }

@@ -1,6 +1,6 @@
 <div class="add">
     <!-- <h2>from add product</h2> -->
-    <form class="form flex">
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
             <div>
                 <p>General information</p>
@@ -8,52 +8,24 @@
            
                 <div>
                     <label for="">Name Discount</label><br>
-                    <input type="text" >
+                    <input type="text" id="name" formControlName="name" >
                 </div>
                 <div class="">
                     <label for="">Discount</label><br>
-                    <input type="text">
+                    <input type="number"  id="discount" formControlName="discount" >
                 </div>
             
                 <div>
                     <label for="">Start day</label><br>
-                    <input type="text" >
+                    <input type="date" id="startDate" formControlName="startDate">
                 </div>
                 <div class="">
                     <label for="">End day</label><br>
-                    <input type="text">
-                </div>
-            <!-- <ckeditor [editor]="Editor" [(ngModel)]="content"></ckeditor> -->
+                    <input type="date" id="endDate" formControlName="endDate">
+                </div>         
+                <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="description" formControlName="description"></ckeditor></div>
 
-            <!-- <textarea id="my-editor" name="description"></textarea> -->
-            <!-- <div *ngIf="selectedFile" class="add_img">
-                <div>Image</div>
-                <div class="show_img">
-                    <div class=""><img [src]="imageSrc"></div>
-                    <span>
-                        <p>{{ selectedFile.name }}</p>
-                    </span>
-                </div>
-
-            </div> -->
-            
-            <button class="bt_add">Add Discount</button>
+            <button class="bt_add"  type="submit">Add Discount</button>
         </div>
-        <!-- <div class=" left ">
-            
-            
-            <div class="information formadd" >
-                <div class="flex extra">
-                    <p>Categories</p><img src="/Client/src/assets/img/addfile.svg" alt="">
-                </div>
-                <select name="my-select" id="my-select" class="add_extra">
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
-                  </select>
-            </div>
-            
-        </div> -->
-        
     </form>
 </div>

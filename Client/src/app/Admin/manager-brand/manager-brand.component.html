@@ -56,7 +56,7 @@
                 <tr *ngFor="let Brand of Brands | paginate: { itemsPerPage: 10, currentPage: currentPage }">
                     <td>{{ Brand.id }}</td>
                     <td routerLink="ImportProducts/{{Brand.id}}">{{ Brand.name }}</td>
-                    <td></td>
+                    <td>{{Brand.description}}</td>
                     <td routerLink="ImportProducts/{{Brand.id}}">{{ Brand.createdAt }}</td>
                     <td>{{ Brand.updatedAt }}</td>
                 </tr>
