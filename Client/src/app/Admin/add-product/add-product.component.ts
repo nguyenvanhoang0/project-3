@@ -8,6 +8,11 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ProductService } from '../../Service/product/product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { ShowBrandService } from 'src/app/Service/show_brand/show-brand.service';
+import { Brand } from 'src/app/Service/show_brand/show-brand.interface';
+import { CategoryService } from 'src/app/Service/category/category.service';
+import { Category } from 'src/app/Service/category/category';
+
 interface Image {
   src: string;
   name: string;
@@ -104,17 +109,42 @@ interface Image {
 
 export class AddProductComponent implements OnInit{
   public Editor = ClassicEditor;
+  public imageUrls: string = "";
 
+  Brands: Brand[] | null = null;
+  category: Category[] | null = null;
   // inputIndices = [0, 1, 2, 3, 4];
   files: { src: string, name: string }[] = [];
   form!: FormGroup;
+  
 
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private showBrandService: ShowBrandService,
+    private CategoryService: CategoryService,
+  ) { 
+    this.showBrandService.getAllBrand()
+    .subscribe((response: Brand[]) => {
+      this.Brands = response;
+    });
+
+    this.CategoryService.getAllCategory()
+      .subscribe((response: Category[]) => {
+        this.category = response;
+      });
+
+  }
 
   ngOnInit(): void {
+    this.showBrandService.getAllBrand().subscribe((response: Brand[]) => {
+      this.Brands = response;
+    });
+
+    this.CategoryService.getAllCategory().subscribe((response: Category[]) => {
+      this.category = response;
+    });
+
     this.form = this.fb.group({
       title: ['', Validators.required],
       price: ['', Validators.required],
@@ -125,6 +155,9 @@ export class AddProductComponent implements OnInit{
   }
 
   onSubmit(): void {
+
+   
+  
     const product = this.form.value;
     const images = this.files.map(file => file.src).join(',');
 

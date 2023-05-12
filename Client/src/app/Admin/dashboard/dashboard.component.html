@@ -1,7 +1,11 @@
 <div class="flex subject dashboard">
     <div class="information orders">
         <div class="flex tile">
-            <p>orders of the day : 12</p>
+            <p>orders of the day :
+                <p id="total-day">
+            </p>
+           
+
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart"
                 viewBox="0 0 16 16">
                 <path
@@ -11,7 +15,7 @@
 
         <div class="flex">
             <p class="mini_text">Today:</p>
-            <h2>108,03$</h2>
+            <h2 id="total-price">{{dayList}}$</h2>
         </div>
 
     </div>
@@ -55,6 +59,7 @@
     </div>
 <p class="tille_chart">Graph showing sales and orders  {{selectedMonth}} / {{selectedYear}}</p>
     <canvas id="myChart"></canvas>
+
 </div>
 
 <ul #dayList>

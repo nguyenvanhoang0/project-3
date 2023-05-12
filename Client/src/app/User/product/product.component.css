@@ -342,7 +342,6 @@
 }
 
 .home-product-item__img {
-    padding-top: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -446,3 +445,8 @@ i.home-product-item-like-icon-fill {
 .home-product-item__sale-off-percent {}
 
 .home-product-item__sale-off-label {} */
+.page{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}

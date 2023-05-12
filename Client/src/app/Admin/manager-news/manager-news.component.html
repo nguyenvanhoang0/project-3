@@ -15,21 +15,21 @@
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Name</th>
-                    <th>Gmail</th>
+                    <th>Title</th>
+                    <th>Publication date</th>
                     <th>author</th>
                 </tr>
             </thead>
             <tbody *ngIf="news">
                 <tr *ngFor="let newss of news | paginate: { itemsPerPage: 8, currentPage: currentPage }">
-                    <td>{{ newss.articles.source.id }}</td>
-                    <td routerLink="UserDetail/{{newss.articles.source.id}}"><span>
-                            <p>{{ newss.articles.source.name }}</p>
+                    <td>{{ newss.id }}</td>
+                    <td routerLink="UserDetail/{{newss.id}}"><span>
+                            <p>{{ newss.title }}</p>
                         </span></td>
-                    <td routerLink="UserDetail/{{newss.articles.source.id}}"><span>
-                            <p>{{ newss.articles.title }}</p>
+                    <td routerLink="UserDetail/{{newss.id}}"><span>
+                            <p>{{ newss.publishedDate }}</p>
                         </span></td>
-                    <td><span>{{ newss.articles.author }}</span></td>
+                    <td><span>{{ newss.author }}</span></td>
                 </tr>
 
             </tbody>

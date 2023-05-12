@@ -6,7 +6,7 @@ import { Product } from './show-product.interface';
   providedIn: 'root'
 })
 export class ShowProductService {
-  apiUrl = 'https://localhost:7051/api/products';
+  apiUrl = 'https://localhost:7078/api/products';
 
   constructor(private http: HttpClient) { }
 

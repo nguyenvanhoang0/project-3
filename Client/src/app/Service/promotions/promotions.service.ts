@@ -9,7 +9,7 @@ import { Promotions } from './promotions';
   providedIn: 'root'
 })
 export class PromotionsService {
-  apiUrl = 'https://localhost:7051/api/promotions';
+  apiUrl = 'https://localhost:7078/api/promotions';
 
   constructor(private http: HttpClient) { }
 
@@ -27,4 +27,15 @@ export class PromotionsService {
     const url = `${this.apiUrl}`;
     return this.http.post<Promotions>(url, Brand);
   }
+
+  updatePromotions(id: number, updatedPromotions: Promotions): Observable<Promotions> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<Promotions>(url, updatedPromotions);
+  }
+
+  deletePromotions(id: number) {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete(url);
+  }
+  
 }

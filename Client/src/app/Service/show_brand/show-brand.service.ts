@@ -7,7 +7,7 @@ import { Brand } from './show-brand.interface';
   providedIn: 'root'
 })
 export class ShowBrandService {
-  apiUrl = 'https://localhost:7051/api/Brands';
+  apiUrl = 'https://localhost:7078/api/Brands';
 
   constructor(private http: HttpClient) { }
 

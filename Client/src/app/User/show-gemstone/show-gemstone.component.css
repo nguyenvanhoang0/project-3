@@ -1,0 +1,144 @@
+.product__detail {
+    margin-top: 96px;
+    margin-bottom: 40px;
+}
+
+
+.grid__column-6-img {
+    width: 100%;
+}
+
+.product__detail-wrap {
+    display: flex;
+}
+
+.product__detail-wrap .grid__column-6 {
+    margin-left: 20px;
+}
+
+.aboutUs-content_title {
+    padding-top: calc(100%/50);
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.aboutUs-content-wrap_img {
+    /* margin-left: 20px; */
+    margin-top: -7px;
+}
+
+.aboutUs-content-wrap_child {
+    padding-left: 34px;
+}
+
+.aboutUs-content-wrap_child .aboutUs-content_title {
+    padding-top: calc(100%/2 - 153px);
+}
+
+/* product__detail-list */
+
+.product__detail-list {
+    margin-top: 25px;
+}
+
+.product__detail-item {
+    display: flex;
+    margin: 13px 0 0 0;
+}
+
+.product__detail-item-child {
+    font-size: 1.5rem;
+}
+
+.product__detail-item-child:nth-child(2) {
+    margin-left: 8px;
+    color: var(--pink-color);
+}
+
+.product__detail-item-child:nth-child(1) {
+    min-width: 100px;
+}
+
+/* home-product-item__price */
+.home-product-item__price {
+    margin-top: 30px;
+}
+
+.home-product-item__price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.home-product-item__price-old {
+    font-size: 1.4rem;
+    margin-left: 10px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.home-product-item__price-current {
+    font-size: 3rem;
+    color: red;
+    font-weight: bold;
+}
+
+
+
+.grid__column-6 .add-to-cart-button {
+    padding-left: 0;
+}
+
+
+.add-to-cart-button {
+    margin-top: 40px;
+    width: calc(100%/2);
+}
+
+.add-to-cart-button p {
+    border: none;
+    padding: 16px;
+
+}
+
+.add-to-cart {
+    color: var(--white-color);
+}
+
+.add-to-cart-button-hover {
+    background-color: var(--pink-color);
+}
+
+
+.product__detail-group::after {
+    content: "";
+    margin-top: 26px;
+    position: absolute;
+    width: calc(100%/8);
+    border-bottom: 1px solid #776969;
+}
+
+
+.add-to-cart-button::after {
+    content: "";
+    margin-left: -130px;
+    margin-top: 26px;
+    position: absolute;
+    width: calc(100%/8);
+    border-bottom: 1px solid #776969;
+}
+
+
+/* add-to-cart-infor */
+.add-to-cart-infor {
+    margin-top: 40px;
+}
+
+.add-to-cart-infor-hover {
+    font-size: 1.5rem;
+}
+
+.add-to-cart-infor-number {
+    font-size: 1.5rem;
+    color: var(--pink-color);
+}

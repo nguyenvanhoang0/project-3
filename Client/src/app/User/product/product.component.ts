@@ -10,6 +10,7 @@ import { Product } from 'src/app/Service/show-product/show-product.interface';
 export class ProductComponent {
   products: Product[] | null = null;
   isIndexClass = false;
+  currentPage = 1
 
   
   constructor(private ShowProductService: ShowProductService) {

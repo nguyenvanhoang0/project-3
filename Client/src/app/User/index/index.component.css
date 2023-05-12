@@ -35,7 +35,7 @@
 
 .container-product-popular {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: #eecccc;
 }
 
 /* product popular */
@@ -52,7 +52,7 @@
     font-size: 2.2rem;
     font-weight: bold;
     line-height: 42px;
-    color: rgb(234, 221, 75);
+    color: var(--white-color);
 }
 
 .grid__column-6-img {
@@ -148,7 +148,7 @@
 
 .product-news-img-inner {
     width: 100%;
-    height: 280px;
+    max-height: 507px;
 }
 
 .product-news-title {

@@ -1,1 +1,31 @@
-<p>update-discount works!</p>
+<div class="add">
+    <!-- <h2>from add product</h2> -->
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="information  right formadd">
+            <div>
+                <p>General information</p>
+            </div>
+           
+                <div>
+                    <label for="">Name Discount</label><br>
+                    <input type="text" id="name" formControlName="name" value="{{Promotions?.name}}">
+                </div>
+                <div class="">
+                    <label for="">Discount</label><br>
+                    <input type="number"  id="discount" formControlName="discount" value="{{Promotions?.discount}}">
+                </div>
+            
+                <div>
+                    <label for="">Start day</label><br>
+                    <input type="date" id="startDate" formControlName="startDate" value="{{Promotions?.startDate}}">
+                </div>
+                <div class="">
+                    <label for="">End day</label><br>
+                    <input type="date" id="endDate" formControlName="endDate" value="{{Promotions?.endDate}}">
+                </div>         
+                <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>{{Promotions?.description}}</P>" id="description" formControlName="description"></ckeditor></div>
+
+            <button class="bt_add"  type="submit">Add Discount</button>
+        </div>
+    </form>
+</div>

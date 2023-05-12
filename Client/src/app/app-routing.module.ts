@@ -80,10 +80,10 @@ const routes: Routes = [
       { path: 'ManagerDiscount', component: ManagerDiscountComponent },
       { path: 'ManagerUser', component: ManagerUserComponent },
       { path: 'ManagerCategory', component: ManagerCategoryComponent },
-      
+        
       { path: 'ManagerProduct/UpdateProduct/:id', component: UpdateProductComponent },
       { path: 'UpdateBrand', component: UpdateBrandComponent },
-      { path: 'UpdateDiscount', component: UpdateDiscountComponent },
+      { path: 'ManagerDiscount/DiscountDetail/:id/UpdateDiscount/:id', component: UpdateDiscountComponent },
       { path: 'UpdateGift', component: UpdateGiftComponent },
 
       { path: 'ManagerProduct/ProductDetail/:id', component: ProductDetailComponent },

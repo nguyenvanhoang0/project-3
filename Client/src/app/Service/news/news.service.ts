@@ -7,7 +7,7 @@ import { News } from './news';
 })
 export class NewsService {
   // https://newsapi.org/
-  private apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=736b9291bcb6476283d47c397c2a5bdc';
+  private apiUrl = 'https://localhost:7078/api/News';
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +18,10 @@ export class NewsService {
   getNewsById(id: number): Observable<News> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<News>(url);
+  }
+
+  createNews(Brand: News): Observable<News> {
+    const url = `${this.apiUrl}`;
+    return this.http.post<News>(url, Brand);
   }
 }

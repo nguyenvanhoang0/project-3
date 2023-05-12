@@ -46,9 +46,9 @@
         </tbody>
     </table>
     <div class="flex">
-        <ul>
-            <li>Edit</li>
-            <li>delete</li>
+        <ul class="Edit">
+            <li routerLink="UpdateDiscount/{{Promotions?.id}}">Edit</li>
+            <li *ngIf="Promotions" (click)="deletePromotions(Promotions.id)">delete</li>
         </ul>
     </div>
 </div>

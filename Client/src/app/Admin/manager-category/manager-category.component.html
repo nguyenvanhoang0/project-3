@@ -1,5 +1,5 @@
 <div class="information">
-    <h2>Discount List</h2>
+    <h2>Category List</h2>
     <div class="list ">
         <table class="">
             <thead>
@@ -17,10 +17,10 @@
                         </div>
                     </th>
                     <th>name</th>
-                    <th>Applicable product number</th>
+                    
                     <th>
                         <div class="flex">
-                            Discount
+                            Description
 
                             <!-- <div class="hover">
                                 <ul >
@@ -34,33 +34,14 @@
                             </div> -->
                         </div>
                     </th>
-                    <th>
-                        <div class="flex">
-                            Start day
-
-                            <div class="hover">
-                                <ul >
-                                    <li (click)="sortBystartDate('asc')">
-                                        <img src="../../../assets/img/svg/arrow-down-square-fill.svg" alt="">
-                                    </li>
-                                    <li (click)="sortBystartDate('desc')">
-                                        <img src="../../../assets/img/svg/arrow-up-square-fill.svg" alt="">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </th>
-                    <th>End day</th>
                 </tr>
             </thead>
             <tbody *ngIf="category">
                 <tr *ngFor="let Category of category | paginate: { itemsPerPage: 10, currentPage: currentPage }">
                     <td>{{ Category.id }}</td>
                     <td routerLink="ImportProducts/{{Category.id}}">{{ Category.name }}</td>
-                    <td>{{Category.products}}</td>
+                    <!-- <td>{{Category.products}}</td> -->
                     <td routerLink="ImportProducts/{{Category.id}}">{{ Category.description }}</td>
-                    <td>{{ Category.createdAt }}</td>
-                    <td>{{ Category.updatedAt }}</td>
                 </tr>
 
             </tbody>

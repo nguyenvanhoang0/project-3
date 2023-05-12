@@ -3,6 +3,8 @@ import { PromotionsService } from 'src/app/Service/promotions/promotions.service
 import { Promotions } from 'src/app/Service/promotions/promotions';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { Location } from '@angular/common';
+
 // import { Router } from '@angular/router';
 
 @Component({
@@ -26,6 +28,7 @@ export class DiscountDetailComponent {
   constructor(
     // private router: Router,
     // private location: Location,
+    private location: Location,
     private PromotionsService: PromotionsService,
     private route: ActivatedRoute,
     ) {
@@ -76,6 +79,21 @@ export class DiscountDetailComponent {
     }
   }
 
+  deletePromotions(id: number) {
+    this.PromotionsService.deletePromotions(id).subscribe(
+      response => {
+        console.log(response);
+        this.location.back();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
  
   
   // reloadPage(): void {

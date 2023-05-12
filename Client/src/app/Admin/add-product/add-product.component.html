@@ -131,7 +131,7 @@
                 </div>
                 <div class="">
                     <div *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
-                        <input type="file" (change)="onFileSelecteds($event, index)" *ngIf="index === 0 || files[index - 1] " class="add_img">
+                        <input type="file"  (change)="onFileSelecteds($event, index)" *ngIf="index === 0 || files[index - 1] " class="add_img">
                       </div>
                 </div>
             </div>
@@ -140,9 +140,8 @@
                     <p>Brand</p><img src="/Client/src/assets/img/addfile.svg" alt="">
                 </div>
                 <select name="my-select" id="my-select" class="add_extra">
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
+                    <option value="{{ Brand.id }}" *ngFor="let Brand of Brands">{{ Brand.name }}</option>
+                    
                   </select>
             </div>
             <div class="information formadd" >
@@ -150,18 +149,12 @@
                     <p>Categories</p><img src="../../../assets/img/svg/tag.svg" alt=" ">
                 </div>
                 <select name="my-select" id="my-select" class="add_extra">
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
+                    
+                    <option value="{{ Category.id }}" *ngFor="let Category of category">{{ Category.name }}</option>
                   </select>
             </div>
-            <div class="information formadd">
-                <div class="flex extra">
-                    <p>Image</p><img src="/Client/src/assets/img/addfile.svg" alt="">
-                </div>
-                
-            </div>
+            
         </div>
-        
     </form>
+    <p>{{imageUrls}}</p>
 </div>

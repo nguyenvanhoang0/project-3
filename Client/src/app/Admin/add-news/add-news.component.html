@@ -1,20 +1,20 @@
 <div class="add">
     <!-- <h2>from add product</h2> -->
-    <form class="form flex">
+    <form class="form flex" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="information  right formadd">
             <div>
                 <p>General information</p>
             </div>
             <div>
                 <label for="">Tile news</label><br>
-                <input type="text">
+                <input type="text" >
             </div>
-            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor></div>
+            <div class="ckeditor"> <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" id="content" formControlName="content"></ckeditor></div>
 
             <div class="flex extra">
                 <div>
                     <label for="">author</label><br>
-                    <input type="text">
+                    <input type="text" id="author" formControlName="author">
                 </div>
                 <!-- <div class="">
                     <label for="">Quantity</label><br>
@@ -22,20 +22,8 @@
                 </div> -->
                 
             </div>
-            <!-- <ckeditor [editor]="Editor" [(ngModel)]="content"></ckeditor> -->
-
-            <!-- <textarea id="my-editor" name="description"></textarea> -->
-            <!-- <div *ngIf="selectedFile" class="add_img">
-                <div>Image</div>
-                <div class="show_img">
-                    <div class=""><img [src]="imageSrc"></div>
-                    <span>
-                        <p>{{ selectedFile.name }}</p>
-                    </span>
-                </div>
-
-            </div> -->
-            <button class="bt_add">Add News</button>
+           
+            <button class="bt_add" type="submit">Add News</button>
         </div>
         <!-- <div class=" left ">
             

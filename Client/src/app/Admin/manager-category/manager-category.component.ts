@@ -32,7 +32,6 @@ export class ManagerCategoryComponent {
   ngOnInit() {
     this.CategoryService.getAllCategory().subscribe((response: Category[]) => {
       this.category = response;
-      this.filteredProducts = response;
     });
   }
 

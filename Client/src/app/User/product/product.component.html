@@ -62,10 +62,11 @@
                 <div class="home-product">
                     <div class="grid__row" *ngIf="products" [ngClass]="{ 'index': isIndexClass }">
                         <!-- Product item -->
-                        <div class="grid__column-2-4" *ngFor="let product of products">
+                        <div class="grid__column-2-4" *ngFor="let product of products | paginate: { itemsPerPage: 20, currentPage: currentPage }">
                             <div class="home-product-item">
-                                <div class="home-product-item__img" style="background-image: url(https://statics.vinpearl.com/quan-ca-phe-dep-o-da-nang-14_1631027805.png);
-                                    ">
+                                <div class="home-product-item__img" >
+                                                    <div class="img_product"><img [src]="product.imageUrl" alt="{{ product.name }}" width="200"></div>
+
                                     <!-- <img [src]="product.image" alt="{{ product.title }}"> -->
                                 </div>
                                 <h4 class="home-product-item__name">Natural Round cut Citrine Ring in Sterling Silver.
@@ -120,8 +121,12 @@
                                 </div>
                             </div> -->
                         </div>
+                        
 
 
+                    </div>
+                    <div class="page">
+                        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
                     </div>
                 </div>
             </div>

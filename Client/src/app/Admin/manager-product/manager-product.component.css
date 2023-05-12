@@ -97,7 +97,7 @@ ul li {
     padding: 20px;
     justify-content: center;
     display: flex;
-    width: 100px;
+    width: 120px;
 
 }
 
@@ -110,7 +110,6 @@ ul li {
 .hover ul li {
     background-color: #71b85e;
     border: solid 1px gray;
-
 }
 
 

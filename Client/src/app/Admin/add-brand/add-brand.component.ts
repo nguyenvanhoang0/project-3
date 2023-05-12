@@ -30,10 +30,6 @@ export class AddBrandComponent {
 
     onSubmit(): void {
       const product = this.form.value;
-      
-  
-     
-  
       this.showBrandService.createBrand(product).subscribe(
         response => console.log(response),
         error => console.log(error),
